@@ -195,40 +195,51 @@
     pointer-events:none;
     z-index:5;
 
-    background:linear-gradient(
-      90deg,
-      rgba(0,0,0,0) 0%,
-      rgba(80,10,30,.14) 38%,
-      rgba(60,5,20,.30) 50%,
-      rgba(80,10,30,.14) 62%,
-      rgba(0,0,0,0) 100%
-    );
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,0) 0%,
+        rgba(80,10,30,.14) 38%,
+        rgba(60,5,20,.30) 50%,
+        rgba(80,10,30,.14) 62%,
+        rgba(0,0,0,0) 100%
+      );
   }
 
   .page{
     padding:30px 28px;
     position:relative;
-    min-width:0;
   }
 
   .page.left{
-    background:linear-gradient(120deg,#fbe4ea,#f6d3dc);
-    box-shadow:inset -18px 0 30px -22px rgba(50,5,20,.45);
+    background:
+      linear-gradient(
+        120deg,
+        #fbe4ea,
+        #f6d3dc
+      );
+
+    box-shadow:
+      inset -18px 0 30px -22px rgba(50,5,20,.45);
   }
 
   .page.right{
     background:#fdf1f4;
-    box-shadow:inset 18px 0 30px -22px rgba(50,5,20,.35);
+
+    box-shadow:
+      inset 18px 0 30px -22px rgba(50,5,20,.35);
   }
 
   .page.page-full{
     grid-column:1 / -1;
-    background:linear-gradient(
-      90deg,
-      #fbe4ea,
-      #fdf1f4 50%,
-      #fdf1f4
-    );
+    background:
+      linear-gradient(
+        90deg,
+        #fbe4ea,
+        #fdf1f4 50%,
+        #fdf1f4
+      );
+
     padding:44px 70px;
     box-shadow:none;
   }
@@ -283,7 +294,7 @@
     right:24px;
   }
 
-  /* dedication card */
+  /* ---------- DEDICATION ---------- */
 
   .card{
     background:#fbe9ee;
@@ -313,7 +324,7 @@
     color:#a85f70;
   }
 
-  /* index */
+  /* ---------- INDEX ---------- */
 
   ol.idx{
     list-style:none;
@@ -335,7 +346,7 @@
     font-weight:600;
   }
 
-  /* nav */
+  /* ---------- NAV ---------- */
 
   .nav{
     display:flex;
@@ -373,7 +384,7 @@
     letter-spacing:1px;
   }
 
-  /* chapter 1 form */
+  /* ---------- FORM ---------- */
 
   .field{
     margin-bottom:14px;
@@ -406,34 +417,17 @@
     gap:12px;
   }
 
-  /* ---------- RADIOS CORREGIDOS ---------- */
-
   .radios{
     display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:8px 14px;
+    gap:14px;
     font-size:12px;
     color:var(--wine);
-    width:100%;
-    max-width:100%;
   }
 
   .radios label{
     display:flex;
     align-items:center;
     gap:5px;
-    white-space:nowrap;
-    margin:0;
-    width:auto;
-    max-width:100%;
-  }
-
-  .radios input{
-    margin:0;
-    padding:0;
-    width:auto;
-    flex-shrink:0;
   }
 
   .save-btn{
@@ -448,7 +442,7 @@
     letter-spacing:.5px;
   }
 
-  /* collage */
+  /* ---------- COLLAGE ---------- */
 
   .collage{
     display:grid;
@@ -459,13 +453,21 @@
   }
 
   .collage-slot{
-    background:linear-gradient(145deg,#f6c6d1,#f19bb0);
+    background:
+      linear-gradient(
+        145deg,
+        #f6c6d1,
+        #f19bb0
+      );
+
     border:3px solid #fff;
     border-radius:3px;
     box-shadow:0 3px 8px rgba(0,0,0,.15);
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     color:#7a2c40;
     font-size:11px;
     letter-spacing:.5px;
@@ -500,6 +502,8 @@
     grid-row:3;
   }
 
+  /* ---------- GALLERY ---------- */
+
   .gallery{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -529,10 +533,12 @@
     inset:0;
     backface-visibility:hidden;
     border-radius:3px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     padding:8px;
     text-align:center;
   }
@@ -553,6 +559,7 @@
     font-size:20px;
     width:100%;
     flex:1;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -560,7 +567,6 @@
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
-
     border-radius:3px;
   }
 
@@ -580,7 +586,7 @@
     line-height:1.4;
   }
 
-  /* medidor */
+  /* ---------- LOVE METER ---------- */
 
   .heart-tap{
     width:64px;
@@ -601,6 +607,7 @@
 
     color:#fff;
     font-size:26px;
+
     border:none;
     cursor:pointer;
 
@@ -644,6 +651,7 @@
         #f19bb0,
         var(--heart)
       );
+
     transition:width .25s;
   }
 
@@ -653,7 +661,7 @@
     margin-top:6px;
   }
 
-  /* sorteo */
+  /* ---------- SORTEO ---------- */
 
   .sorteo-box{
     border:1.5px dashed #d99cad;
@@ -686,15 +694,15 @@
     letter-spacing:.5px;
   }
 
-  /* =====================================================
-     AJUSTE MÓVIL
-     Mantiene el libro centrado y evita desbordamientos.
-     ===================================================== */
+  /* =========================================================
+     CELULAR
+     Mantiene el libro como libro y evita que se recorte.
+     ========================================================= */
 
-  @media (max-width:600px){
+  @media (max-width:700px){
 
     body{
-      padding:20px 8px;
+      padding:15px 8px;
       align-items:center;
     }
 
@@ -704,45 +712,133 @@
     }
 
     .cover{
-      width:min(320px, calc(100vw - 30px));
+      width:min(320px, 92vw);
+    }
+
+    .book{
+      width:100%;
     }
 
     .book-shell{
       width:100%;
-      min-width:0;
+      min-height:0;
     }
 
     .spread{
+      min-height:0;
       width:100%;
-      min-width:0;
     }
 
     .page{
-      min-width:0;
+      padding:22px 16px;
     }
 
-    /*
-      Los radios se acomodan automáticamente.
-      Esto evita que "Demasiado" se salga de la página.
-    */
+    .page h2{
+      font-size:20px;
+    }
+
+    .page p.desc{
+      font-size:11.5px;
+    }
+
+    .row2{
+      grid-template-columns:1fr;
+      gap:0;
+    }
+
     .radios{
-      width:100%;
-      max-width:100%;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 12px;
-      align-items:center;
-      justify-content:flex-start;
+      flex-direction:column;
+      gap:7px;
     }
 
-    .radios label{
+    .collage{
+      grid-template-rows:75px 75px 75px;
+      height:241px;
+      gap:6px;
+    }
+
+    .gallery{
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .flipcard{
+      height:145px;
+    }
+
+    .nav button{
+      padding:8px 11px;
       font-size:11px;
-      white-space:nowrap;
-      flex-shrink:0;
     }
 
-    .radios input{
-      flex-shrink:0;
+    .nav{
+      margin-top:12px;
+    }
+
+    .page.left > div[style*="font-size:12.5px"]{
+      font-size:11.5px !important;
+      line-height:1.7 !important;
+    }
+
+    .page.right h2{
+      font-size:19px;
+    }
+  }
+
+  @media (max-width:430px){
+
+    body{
+      padding:10px 6px;
+    }
+
+    .page{
+      padding:18px 12px;
+    }
+
+    .page h2{
+      font-size:18px;
+    }
+
+    .page p.desc{
+      font-size:10.5px;
+    }
+
+    .chap{
+      font-size:9px;
+    }
+
+    .collage{
+      grid-template-rows:62px 62px 62px;
+      height:200px;
+    }
+
+    .gallery{
+      gap:8px;
+    }
+
+    .flipcard{
+      height:125px;
+    }
+
+    .flip-front .cap{
+      font-size:8px;
+    }
+
+    .flip-back{
+      font-size:9px;
+    }
+
+    .radios{
+      font-size:10.5px;
+    }
+
+    .nav button{
+      padding:7px 9px;
+      font-size:10px;
+    }
+
+    .nav .mid{
+      font-size:9px;
     }
   }
 </style>
@@ -773,11 +869,15 @@
         Para Mi Reina
       </div>
 
-      <button class="open-btn" onclick="openBook()">
+      <button
+        class="open-btn"
+        onclick="openBook()">
         Abrir nuestro libro
       </button>
 
-      <button class="heart-btn" onclick="openBook()">
+      <button
+        class="heart-btn"
+        onclick="openBook()">
         ♥
       </button>
 
@@ -792,13 +892,18 @@
 
     <div class="book-shell">
 
-      <!-- Spread 0 -->
 
-      <div class="spread active" data-spread="0">
+      <!-- SPREAD 0 -->
+
+      <div
+        class="spread active"
+        data-spread="0">
 
         <div class="page left">
 
-          <div class="card" style="margin-top:70px;">
+          <div
+            class="card"
+            style="margin-top:70px;">
 
             <div class="eyebrow">
               Propiedad de
@@ -835,37 +940,58 @@
           <ol class="idx">
 
             <li>
-              <span><b>I.</b> Cartita especial</span>
+              <span>
+                <b>I.</b>
+                Cartita especial
+              </span>
               <span>1</span>
             </li>
 
             <li>
-              <span><b>II.</b> Collage</span>
+              <span>
+                <b>II.</b>
+                Collage
+              </span>
               <span>2</span>
             </li>
 
             <li>
-              <span><b>III.</b> Capsula del tiempo</span>
+              <span>
+                <b>III.</b>
+                Capsula del tiempo
+              </span>
               <span>3</span>
             </li>
 
             <li>
-              <span><b>IV.</b> Galeria de recuerdos</span>
+              <span>
+                <b>IV.</b>
+                Galeria de recuerdos
+              </span>
               <span>4</span>
             </li>
 
             <li>
-              <span><b>V.</b> Medidor de Amor</span>
+              <span>
+                <b>V.</b>
+                Medidor de Amor
+              </span>
               <span>5</span>
             </li>
 
             <li>
-              <span><b>VI.</b> Sorteo Romantico</span>
+              <span>
+                <b>VI.</b>
+                Sorteo Romantico
+              </span>
               <span>6</span>
             </li>
 
             <li>
-              <span><b>VII.</b> Algo que me recuerda a ti</span>
+              <span>
+                <b>VII.</b>
+                Algo que me recuerda a ti
+              </span>
               <span>7</span>
             </li>
 
@@ -876,22 +1002,25 @@
       </div>
 
 
-      <!-- Spread 1 -->
+      <!-- SPREAD 1 -->
 
-      <div class="spread" data-spread="1">
+      <div
+        class="spread"
+        data-spread="1">
 
         <div class="page left">
 
           <div
             class="chap"
-            style="text-align:center;"
-          >
+            style="text-align:center;">
             Antes de empezar
           </div>
 
           <h2 style="text-align:center;">
             Una Carta para Ti
           </h2>
+
+          <!-- CARTA NO EDITABLE -->
 
           <div
             style="
@@ -902,14 +1031,12 @@
               width:100%;
               min-height:260px;
             "
-            contenteditable="true"
           >Hola mi amoooor, estamos en nuestro octavo mesario. Te agradezco mucho mi amor por estos bellos 8 meses a tu lado han sido muy pero 
 muy especiales a tu lado, como te he dicho me siento muy pero muy afortunado de tenerte en mi vida que formes parte de mi corazon y si se podria decir que de todo mi corazon, gracias en verdad mi amor por ser el motivo de todas mis sonrisas, de ser mi paz dia a dia y sobre todo ser mi compañia en este camino que se llama vida, quien diria que luego de 
 dos años estariamos aqui mi amor, empezamos como dos extraños y paramos siendo una bonita pareja creeme que yo me siento muy orgulloso de lo nuestro de como ha ido progresando y como seguira perdurando el amor por el resto de nuestras vidas y almas pq si mi amor sos mi alma gemela mi lazito rojo como te lo he dicho muchas veces y creeme que me siento tan pero tan feliz que saeas tu y no otra
 persona, porque lo que soy contigo no seria con nadie mas mi amor, el hombre que me converti a tu lado es la mejor version de mi y de verdad la mereces y mucho mas aun, gracias por estos bellos 8 meses mi amor, no sabes lo feliz que han sido pese a lo que he pasado siemrpe buscas sacarme una sonrisa y sobre todo alaegrarme mi corazon y de verdad te lo agradezco, gracias por verme siempre con ojos de amor en estos 8 meses amor.
 Felices 8 meses mi preciosa 
-Te amo mi Reina 👸🤍
-          </div>
+Te amo mi Reina 👸🤍</div>
 
         </div>
 
@@ -918,8 +1045,7 @@ Te amo mi Reina 👸🤍
 
           <div
             class="chap"
-            style="text-align:center;"
-          >
+            style="text-align:center;">
             Nuestros Momentos
           </div>
 
@@ -927,32 +1053,34 @@ Te amo mi Reina 👸🤍
             Collage de nuestros bellos momentos
           </h2>
 
-          <div class="collage" id="collage">
+          <div
+            class="collage"
+            id="collage">
 
             <div
               class="collage-slot"
-              style="background-image:url('foto1.jpeg')"
-            ></div>
+              style="background-image:url('foto1.jpeg')">
+            </div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto2.jpeg')"
-            ></div>
+              style="background-image:url('foto2.jpeg')">
+            </div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto3.jpeg')"
-            ></div>
+              style="background-image:url('foto3.jpeg')">
+            </div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto4.jpeg')"
-            ></div>
+              style="background-image:url('foto4.jpeg')">
+            </div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto5.jpeg')"
-            ></div>
+              style="background-image:url('foto5.jpeg')">
+            </div>
 
           </div>
 
@@ -961,9 +1089,11 @@ Te amo mi Reina 👸🤍
       </div>
 
 
-      <!-- Spread 2 -->
+      <!-- SPREAD 2 -->
 
-      <div class="spread" data-spread="2">
+      <div
+        class="spread"
+        data-spread="2">
 
         <div class="page left">
 
@@ -974,7 +1104,6 @@ Te amo mi Reina 👸🤍
           <p class="desc">
             Déjame un mensajito para recordar este aniversario.
           </p>
-
 
           <div class="row2">
 
@@ -987,11 +1116,9 @@ Te amo mi Reina 👸🤍
               <input
                 type="text"
                 id="capsulaDe"
-                value="Mi Amor"
-              >
+                value="Mi Amor">
 
             </div>
-
 
             <div class="field">
 
@@ -1002,8 +1129,7 @@ Te amo mi Reina 👸🤍
               <input
                 type="date"
                 id="capsulaFecha"
-                value="2026-08-20"
-              >
+                value="2026-08-20">
 
             </div>
 
@@ -1076,8 +1202,7 @@ Te amo mi Reina 👸🤍
                 <input
                   type="radio"
                   name="extranas"
-                  value="Un poquito"
-                >
+                  value="Un poquito">
                 Un poquito
               </label>
 
@@ -1085,8 +1210,7 @@ Te amo mi Reina 👸🤍
                 <input
                   type="radio"
                   name="extranas"
-                  value="Mucho"
-                >
+                  value="Mucho">
                 Mucho
               </label>
 
@@ -1095,8 +1219,7 @@ Te amo mi Reina 👸🤍
                   type="radio"
                   name="extranas"
                   value="Demasiado"
-                  checked
-                >
+                  checked>
                 Demasiado
               </label>
 
@@ -1134,9 +1257,10 @@ Te amo mi Reina 👸🤍
           <button
             class="save-btn"
             id="capsulaBtn"
-            onclick="enviarCapsula()"
-          >
+            onclick="enviarCapsula()">
+
             Guardar Recuerdo
+
           </button>
 
         </div>
@@ -1154,17 +1278,19 @@ Te amo mi Reina 👸🤍
 
           <div
             class="gallery"
-            id="gallery"
-          ></div>
+            id="gallery">
+          </div>
 
         </div>
 
       </div>
 
 
-      <!-- Spread 3 -->
+      <!-- SPREAD 3 -->
 
-      <div class="spread" data-spread="3">
+      <div
+        class="spread"
+        data-spread="3">
 
         <div class="page left">
 
@@ -1181,8 +1307,8 @@ Te amo mi Reina 👸🤍
             <button
               class="heart-tap"
               id="loveHeart"
-              onclick="tapHeart()"
-            >
+              onclick="tapHeart()">
+
               ♥
             </button>
 
@@ -1201,16 +1327,17 @@ Te amo mi Reina 👸🤍
 
             <div
               class="meterfill"
-              id="meterFill"
-            ></div>
+              id="meterFill">
+            </div>
 
           </div>
 
           <div
             class="meterpct"
-            id="meterPct"
-          >
+            id="meterPct">
+
             0%
+
           </div>
 
         </div>
@@ -1225,8 +1352,7 @@ Te amo mi Reina 👸🤍
           <div
             class="sorteo-box"
             id="sorteoBox"
-            onclick="generarVale()"
-          >
+            onclick="generarVale()">
 
             <span id="sorteoResult">
               (Toca aqui para ver tu premio)
@@ -1236,9 +1362,10 @@ Te amo mi Reina 👸🤍
 
           <button
             class="genbtn"
-            onclick="generarVale()"
-          >
+            onclick="generarVale()">
+
             GENERAR VALE 🎫
+
           </button>
 
         </div>
@@ -1246,9 +1373,11 @@ Te amo mi Reina 👸🤍
       </div>
 
 
-      <!-- Spread 4 -->
+      <!-- SPREAD 4 -->
 
-      <div class="spread" data-spread="4">
+      <div
+        class="spread"
+        data-spread="4">
 
         <div
           class="page left"
@@ -1276,11 +1405,12 @@ Te amo mi Reina 👸🤍
           </p>
 
 
+          <!-- GIRASOL -->
+
           <svg
             viewBox="0 0 200 260"
             width="190"
-            height="247"
-          >
+            height="247">
 
             <defs>
 
@@ -1289,23 +1419,19 @@ Te amo mi Reina 👸🤍
                 x1="0"
                 y1="0"
                 x2="0"
-                y2="1"
-              >
+                y2="1">
 
                 <stop
                   offset="0%"
-                  stop-color="#f7c948"
-                />
+                  stop-color="#f7c948"/>
 
                 <stop
                   offset="60%"
-                  stop-color="#eda52e"
-                />
+                  stop-color="#eda52e"/>
 
                 <stop
                   offset="100%"
-                  stop-color="#d3841c"
-                />
+                  stop-color="#d3841c"/>
 
               </linearGradient>
 
@@ -1315,18 +1441,15 @@ Te amo mi Reina 👸🤍
                 x1="0"
                 y1="0"
                 x2="1"
-                y2="0"
-              >
+                y2="0">
 
                 <stop
                   offset="0%"
-                  stop-color="#4c7a2e"
-                />
+                  stop-color="#4c7a2e"/>
 
                 <stop
                   offset="100%"
-                  stop-color="#6ea344"
-                />
+                  stop-color="#6ea344"/>
 
               </linearGradient>
 
@@ -1336,18 +1459,15 @@ Te amo mi Reina 👸🤍
                 x1="0"
                 y1="0"
                 x2="1"
-                y2="1"
-              >
+                y2="1">
 
                 <stop
                   offset="0%"
-                  stop-color="#6ea344"
-                />
+                  stop-color="#6ea344"/>
 
                 <stop
                   offset="100%"
-                  stop-color="#3f6423"
-                />
+                  stop-color="#3f6423"/>
 
               </linearGradient>
 
@@ -1356,23 +1476,19 @@ Te amo mi Reina 👸🤍
                 id="centerGrad"
                 cx="35%"
                 cy="30%"
-                r="75%"
-              >
+                r="75%">
 
                 <stop
                   offset="0%"
-                  stop-color="#8a5a2c"
-                />
+                  stop-color="#8a5a2c"/>
 
                 <stop
                   offset="55%"
-                  stop-color="#6b431f"
-                />
+                  stop-color="#6b431f"/>
 
                 <stop
                   offset="100%"
-                  stop-color="#4a2c12"
-                />
+                  stop-color="#4a2c12"/>
 
               </radialGradient>
 
@@ -1382,65 +1498,63 @@ Te amo mi Reina 👸🤍
                 x="-40%"
                 y="-40%"
                 width="180%"
-                height="180%"
-              >
+                height="180%">
 
                 <feDropShadow
                   dx="0"
                   dy="4"
                   stdDeviation="4"
                   flood-color="#3d0a1c"
-                  flood-opacity="0.35"
-                />
+                  flood-opacity="0.35"/>
 
               </filter>
 
             </defs>
 
 
+            <!-- tallo -->
+
             <path
               d="M100 148 C 96 175, 96 205, 100 248"
               stroke="url(#stemGrad)"
               stroke-width="6"
               fill="none"
-              stroke-linecap="round"
-            />
+              stroke-linecap="round"/>
 
+
+            <!-- hoja -->
 
             <path
               d="M99 188 C 74 186, 56 198, 46 218 C 70 220, 90 210, 99 192 Z"
-              fill="url(#leafGrad)"
-            />
-
+              fill="url(#leafGrad)"/>
 
             <path
               d="M99 190 C 84 195, 68 204, 50 214"
               stroke="#2f4f19"
               stroke-width="1.4"
               fill="none"
-              opacity=".6"
-            />
+              opacity=".6"/>
 
+
+            <!-- segunda hoja -->
 
             <path
               d="M101 210 C 126 210, 144 222, 152 240 C 128 240, 108 230, 100 214 Z"
-              fill="url(#leafGrad)"
-            />
-
+              fill="url(#leafGrad)"/>
 
             <path
               d="M101 213 C 116 219, 132 227, 148 237"
               stroke="#2f4f19"
               stroke-width="1.4"
               fill="none"
-              opacity=".6"
-            />
+              opacity=".6"/>
 
+
+            <!-- flor -->
 
             <g
               transform="translate(100,95)"
-              filter="url(#softShadow)"
-            >
+              filter="url(#softShadow)">
 
               <g id="petal">
 
@@ -1449,8 +1563,7 @@ Te amo mi Reina 👸🤍
                   cy="-56"
                   rx="14"
                   ry="32"
-                  fill="url(#petalGrad)"
-                />
+                  fill="url(#petalGrad)"/>
 
                 <ellipse
                   cx="0"
@@ -1458,95 +1571,37 @@ Te amo mi Reina 👸🤍
                   rx="5"
                   ry="26"
                   fill="#f7c948"
-                  opacity=".45"
-                />
+                  opacity=".45"/>
 
               </g>
 
 
-              <use
-                href="#petal"
-                transform="rotate(24)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(48)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(72)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(96)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(120)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(144)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(168)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(192)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(216)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(240)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(264)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(288)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(312)"
-              />
-
-              <use
-                href="#petal"
-                transform="rotate(336)"
-              />
+              <use href="#petal" transform="rotate(24)"/>
+              <use href="#petal" transform="rotate(48)"/>
+              <use href="#petal" transform="rotate(72)"/>
+              <use href="#petal" transform="rotate(96)"/>
+              <use href="#petal" transform="rotate(120)"/>
+              <use href="#petal" transform="rotate(144)"/>
+              <use href="#petal" transform="rotate(168)"/>
+              <use href="#petal" transform="rotate(192)"/>
+              <use href="#petal" transform="rotate(216)"/>
+              <use href="#petal" transform="rotate(240)"/>
+              <use href="#petal" transform="rotate(264)"/>
+              <use href="#petal" transform="rotate(288)"/>
+              <use href="#petal" transform="rotate(312)"/>
+              <use href="#petal" transform="rotate(336)"/>
 
 
               <circle
                 cx="0"
                 cy="0"
                 r="36"
-                fill="url(#centerGrad)"
-              />
+                fill="url(#centerGrad)"/>
 
 
               <g
                 fill="#2e1b0b"
-                opacity=".55"
-              >
+                opacity=".55">
 
                 <circle cx="0" cy="0" r="2"/>
 
@@ -1581,7 +1636,6 @@ Te amo mi Reina 👸🤍
                 <circle cx="25" cy="-8" r="1.3"/>
                 <circle cx="-25" cy="-7" r="1.3"/>
                 <circle cx="22" cy="18" r="1.3"/>
-
                 <circle cx="-23" cy="17" r="1.3"/>
                 <circle cx="-1" cy="-26" r="1.3"/>
                 <circle cx="8" cy="27" r="1.3"/>
@@ -1595,8 +1649,7 @@ Te amo mi Reina 👸🤍
                 rx="14"
                 ry="9"
                 fill="#c98a3f"
-                opacity=".18"
-              />
+                opacity=".18"/>
 
             </g>
 
@@ -1607,8 +1660,7 @@ Te amo mi Reina 👸🤍
 
         <div
           class="page right"
-          style="text-align:center;"
-        >
+          style="text-align:center;">
 
           <div
             style="
@@ -1637,9 +1689,10 @@ Te amo mi Reina 👸🤍
 
           <button
             class="save-btn"
-            onclick="closeBook()"
-          >
+            onclick="closeBook()">
+
             Cerrar nuestro libro
+
           </button>
 
         </div>
@@ -1649,21 +1702,26 @@ Te amo mi Reina 👸🤍
     </div>
 
 
+    <!-- NAV -->
+
     <div class="nav">
 
       <button
         id="btnPrev"
-        onclick="go(-1)"
-      >
+        onclick="go(-1)">
+
         ‹ Anterior
+
       </button>
+
 
       <button
         id="btnNext"
         class="primary"
-        onclick="go(1)"
-      >
+        onclick="go(1)">
+
         Siguiente ›
+
       </button>
 
     </div>
@@ -1675,9 +1733,9 @@ Te amo mi Reina 👸🤍
 
 <script>
 
-  // =====================================================
-  // FOTOS
-  // =====================================================
+  /* =========================================================
+     FOTOS
+     ========================================================= */
 
   const fotos = [
 
@@ -1720,9 +1778,9 @@ Te amo mi Reina 👸🤍
   ];
 
 
-  // =====================================================
-  // VALES
-  // =====================================================
+  /* =========================================================
+     VALES
+     ========================================================= */
 
   const valesSorteo = [
 
@@ -1741,9 +1799,9 @@ Te amo mi Reina 👸🤍
   ];
 
 
-  // =====================================================
-  // GALERIA
-  // =====================================================
+  /* =========================================================
+     GALERÍA
+     ========================================================= */
 
   const gallery =
     document.getElementById('gallery');
@@ -1756,6 +1814,7 @@ Te amo mi Reina 👸🤍
 
     card.className =
       'flipcard';
+
 
     card.onclick = () =>
       card.classList.toggle('flipped');
@@ -1772,11 +1831,7 @@ Te amo mi Reina 👸🤍
 
           <div
             class="ic"
-            style="${
-              f.img
-                ? `background-image:url('${f.img}')`
-                : ''
-            }"
+            style="${f.img ? `background-image:url('${f.img}')` : ''}"
           >
             ${f.img ? '' : f.icon}
           </div>
@@ -1787,6 +1842,7 @@ Te amo mi Reina 👸🤍
 
         </div>
 
+
         <div class="flipface flip-back">
           ${f.back}
         </div>
@@ -1795,14 +1851,15 @@ Te amo mi Reina 👸🤍
 
     `;
 
+
     gallery.appendChild(card);
 
   });
 
 
-  // =====================================================
-  // FORMSPREE
-  // =====================================================
+  /* =========================================================
+     FORMSPREE
+     ========================================================= */
 
   const FORMSPREE_URL =
     "https://formspree.io/f/xvkplzaj";
@@ -1833,9 +1890,10 @@ Te amo mi Reina 👸🤍
       ).value;
 
     const mensaje =
-      document.getElementById('capsulaMensaje')
-      .value
-      .trim();
+      document
+        .getElementById('capsulaMensaje')
+        .value
+        .trim();
 
 
     if(btn){
@@ -1884,14 +1942,13 @@ Te amo mi Reina 👸🤍
                 `Cápsula del Tiempo de ${de}`
 
             })
+
           }
         );
 
 
       if(!respuesta.ok)
-        throw new Error(
-          'Error al enviar'
-        );
+        throw new Error('Error al enviar');
 
 
       if(btn){
@@ -1902,6 +1959,7 @@ Te amo mi Reina 👸🤍
       }
 
     }
+
     catch(error){
 
       console.error(error);
@@ -1932,21 +1990,21 @@ Te amo mi Reina 👸🤍
   }
 
 
-  // =====================================================
-  // ABRIR / CERRAR LIBRO
-  // =====================================================
+  /* =========================================================
+     ABRIR / CERRAR LIBRO
+     ========================================================= */
 
   function openBook(){
 
     document
       .getElementById('coverWrap')
-      .style.display='none';
+      .style.display = 'none';
 
     document
       .getElementById('book')
       .classList.add('active');
 
-    spread=0;
+    spread = 0;
 
     render();
 
@@ -1961,16 +2019,16 @@ Te amo mi Reina 👸🤍
 
     document
       .getElementById('coverWrap')
-      .style.display='flex';
+      .style.display = 'flex';
 
   }
 
 
-  // =====================================================
-  // NAVEGACION
-  // =====================================================
+  /* =========================================================
+     NAVEGACIÓN
+     ========================================================= */
 
-  let spread=0;
+  let spread = 0;
 
   const spreads =
     document.querySelectorAll('.spread');
@@ -1990,14 +2048,13 @@ Te amo mi Reina 👸🤍
 
     document
       .getElementById('btnPrev')
-      .disabled =
-      spread===0;
+      .disabled = spread === 0;
 
 
     document
       .getElementById('btnNext')
       .disabled =
-      spread===spreads.length-1;
+        spread === spreads.length - 1;
 
   }
 
@@ -2010,24 +2067,24 @@ Te amo mi Reina 👸🤍
 
     if(
       target < 0 ||
-      target > spreads.length-1
+      target > spreads.length - 1
     ){
       return;
     }
 
 
-    spread=target;
+    spread = target;
 
     render();
 
   }
 
 
-  // =====================================================
-  // MEDIDOR DE AMOR
-  // =====================================================
+  /* =========================================================
+     MEDIDOR DE AMOR
+     ========================================================= */
 
-  let love=0;
+  let love = 0;
 
 
   function tapHeart(){
@@ -2035,46 +2092,43 @@ Te amo mi Reina 👸🤍
     love =
       Math.min(
         100,
-        love+10
+        love + 10
       );
 
 
     document
       .getElementById('meterFill')
       .style.width =
-      love+'%';
+        love + '%';
 
 
     document
       .getElementById('meterPct')
       .textContent =
-      love+'%';
+        love + '%';
 
 
     const h =
-      document.getElementById(
-        'loveHeart'
-      );
+      document.getElementById('loveHeart');
 
 
     h.style.transform =
       'scale(1.15)';
 
 
-    setTimeout(
-      () => {
-        h.style.transform =
-          'scale(1)';
-      },
-      120
-    );
+    setTimeout(()=>{
+
+      h.style.transform =
+        'scale(1)';
+
+    },120);
 
   }
 
 
-  // =====================================================
-  // SORTEO
-  // =====================================================
+  /* =========================================================
+     SORTEO
+     ========================================================= */
 
   function generarVale(){
 
@@ -2089,23 +2143,22 @@ Te amo mi Reina 👸🤍
 
     document
       .getElementById('sorteoResult')
-      .textContent =
-      w;
+      .textContent = w;
 
   }
 
 
-  // =====================================================
-  // TECLA V
-  // =====================================================
+  /* =========================================================
+     TECLA V
+     ========================================================= */
 
   document.addEventListener(
     'keydown',
     (e)=>{
 
       if(
-        e.key.toLowerCase()==='v' &&
-        spread===3
+        e.key.toLowerCase() === 'v' &&
+        spread === 3
       ){
 
         generarVale();
