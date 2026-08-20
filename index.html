@@ -2,8 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Nuestra Historia</title>
 
 <style>
@@ -21,15 +20,8 @@
     box-sizing:border-box;
   }
 
-  html,
   body{
     margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
-  }
-
-  body{
     min-height:100vh;
     display:flex;
     align-items:center;
@@ -42,47 +34,13 @@
         #2a0614 60%,
         #150309 100%
       );
-
-    overflow:hidden;
-  }
-
-  /*
-    ============================================================
-    CONTENEDOR PRINCIPAL
-    ============================================================
-    
-    El libro mantiene SIEMPRE su tamaño original de PC.
-    En celulares simplemente se escala proporcionalmente.
-  */
-
-  .viewport{
-    width:100vw;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    position:relative;
-  }
-
-  .book-scale{
-    width:900px;
-    min-width:900px;
-    height:auto;
-    transform-origin:center center;
-    flex-shrink:0;
+    padding:30px 10px;
   }
 
   .stage{
-    width:900px;
-    max-width:none;
-    margin:0 auto;
+    width:100%;
+    max-width:900px;
   }
-
-
-  /* ============================================================
-     COVER
-     ============================================================ */
 
   .label-top{
     text-align:center;
@@ -94,6 +52,8 @@
     opacity:.85;
   }
 
+  /* ---------- COVER ---------- */
+
   .cover-wrap{
     display:flex;
     justify-content:center;
@@ -102,14 +62,7 @@
 
   .cover{
     width:320px;
-
-    background:
-      linear-gradient(
-        160deg,
-        #5c1129,
-        #3d0a1c 70%
-      );
-
+    background:linear-gradient(160deg,#5c1129,#3d0a1c 70%);
     border:1px solid #a8536b;
     border-radius:4px;
 
@@ -192,10 +145,7 @@
     box-shadow:0 0 12px rgba(194,59,86,.7);
   }
 
-
-  /* ============================================================
-     BOOK
-     ============================================================ */
+  /* ---------- BOOK ---------- */
 
   .book{
     display:none;
@@ -207,10 +157,8 @@
 
   .book-shell{
     position:relative;
-    width:900px;
     border-radius:4px;
     perspective:2200px;
-
     min-height:460px;
 
     box-shadow:
@@ -221,16 +169,11 @@
 
   .spread{
     display:none;
-
     grid-template-columns:1fr 1fr;
     gap:0;
-
-    width:900px;
-
     background:#f6d9df;
     border-radius:4px;
     overflow:hidden;
-
     min-height:460px;
     position:relative;
   }
@@ -239,33 +182,27 @@
     display:grid;
   }
 
-
   /* sombra del lomo central */
 
   .spread::after{
     content:'';
-
     position:absolute;
     top:0;
     bottom:0;
     left:50%;
-
     width:70px;
-
     transform:translateX(-50%);
-
     pointer-events:none;
     z-index:5;
 
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0,0,0,0) 0%,
-        rgba(80,10,30,.14) 38%,
-        rgba(60,5,20,.30) 50%,
-        rgba(80,10,30,.14) 62%,
-        rgba(0,0,0,0) 100%
-      );
+    background:linear-gradient(
+      90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(80,10,30,.14) 38%,
+      rgba(60,5,20,.30) 50%,
+      rgba(80,10,30,.14) 62%,
+      rgba(0,0,0,0) 100%
+    );
   }
 
   .page{
@@ -275,57 +212,37 @@
   }
 
   .page.left{
-    background:
-      linear-gradient(
-        120deg,
-        #fbe4ea,
-        #f6d3dc
-      );
-
-    box-shadow:
-      inset -18px 0 30px -22px rgba(50,5,20,.45);
+    background:linear-gradient(120deg,#fbe4ea,#f6d3dc);
+    box-shadow:inset -18px 0 30px -22px rgba(50,5,20,.45);
   }
 
   .page.right{
     background:#fdf1f4;
-
-    box-shadow:
-      inset 18px 0 30px -22px rgba(50,5,20,.35);
+    box-shadow:inset 18px 0 30px -22px rgba(50,5,20,.35);
   }
 
   .page.page-full{
     grid-column:1 / -1;
-
-    background:
-      linear-gradient(
-        90deg,
-        #fbe4ea,
-        #fdf1f4 50%,
-        #fdf1f4
-      );
-
+    background:linear-gradient(
+      90deg,
+      #fbe4ea,
+      #fdf1f4 50%,
+      #fdf1f4
+    );
     padding:44px 70px;
-
     box-shadow:none;
   }
 
   .page::before{
     content:'';
-
     position:absolute;
     inset:0;
-
     pointer-events:none;
 
     box-shadow:
       inset 0 14px 20px -18px rgba(80,20,35,.3),
       inset 0 -14px 20px -18px rgba(80,20,35,.22);
   }
-
-
-  /* ============================================================
-     TEXTOS
-     ============================================================ */
 
   .chap{
     font-size:10.5px;
@@ -366,20 +283,14 @@
     right:24px;
   }
 
-
-  /* ============================================================
-     DEDICATION CARD
-     ============================================================ */
+  /* dedication card */
 
   .card{
     background:#fbe9ee;
     border:1px solid #e9bcc7;
     border-radius:3px;
-
     padding:22px 18px;
-
     text-align:center;
-
     margin-top:60px;
   }
 
@@ -402,10 +313,7 @@
     color:#a85f70;
   }
 
-
-  /* ============================================================
-     INDEX
-     ============================================================ */
+  /* index */
 
   ol.idx{
     list-style:none;
@@ -416,12 +324,9 @@
   ol.idx li{
     display:flex;
     justify-content:space-between;
-
     font-size:13px;
     color:var(--wine);
-
     padding:8px 0;
-
     border-bottom:1px dashed #e3b7c2;
   }
 
@@ -430,34 +335,23 @@
     font-weight:600;
   }
 
-
-  /* ============================================================
-     NAVEGACION
-     ============================================================ */
+  /* nav */
 
   .nav{
-    width:900px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     margin-top:16px;
   }
 
   .nav button{
     background:#fbe0e6;
     color:var(--wine);
-
     border:1px solid #e9b7c2;
     border-radius:3px;
-
     padding:9px 16px;
-
     font-size:12px;
-
     cursor:pointer;
-
     font-family:inherit;
     letter-spacing:.5px;
   }
@@ -479,10 +373,7 @@
     letter-spacing:1px;
   }
 
-
-  /* ============================================================
-     FORMULARIO
-     ============================================================ */
+  /* chapter 1 form */
 
   .field{
     margin-bottom:14px;
@@ -490,32 +381,22 @@
 
   .field label{
     display:block;
-
     font-size:10.5px;
-
     color:#a85f70;
-
     letter-spacing:1px;
-
     text-transform:uppercase;
-
     margin-bottom:5px;
   }
 
   .field input,
   .field select{
     width:100%;
-
     padding:8px 10px;
-
     border:1px solid #e3b7c2;
     border-radius:3px;
-
     background:#fff;
-
     font-family:inherit;
     font-size:12.5px;
-
     color:var(--wine);
   }
 
@@ -525,78 +406,68 @@
     gap:12px;
   }
 
+  /* ---------- RADIOS CORREGIDOS ---------- */
+
   .radios{
     display:flex;
-    gap:14px;
-
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px 14px;
     font-size:12px;
     color:var(--wine);
+    width:100%;
+    max-width:100%;
   }
 
   .radios label{
     display:flex;
     align-items:center;
     gap:5px;
+    white-space:nowrap;
+    margin:0;
+    width:auto;
+    max-width:100%;
+  }
+
+  .radios input{
+    margin:0;
+    padding:0;
+    width:auto;
+    flex-shrink:0;
   }
 
   .save-btn{
     background:var(--heart);
     color:#fff;
-
     border:none;
-
     padding:10px 18px;
-
     border-radius:3px;
-
     font-size:12.5px;
-
     cursor:pointer;
-
     font-family:inherit;
-
     letter-spacing:.5px;
   }
 
-
-  /* ============================================================
-     COLLAGE
-     ============================================================ */
+  /* collage */
 
   .collage{
     display:grid;
-
     grid-template-columns:1fr 1fr;
     grid-template-rows:90px 90px 90px;
-
     gap:8px;
-
     height:290px;
   }
 
   .collage-slot{
-    background:
-      linear-gradient(
-        145deg,
-        #f6c6d1,
-        #f19bb0
-      );
-
+    background:linear-gradient(145deg,#f6c6d1,#f19bb0);
     border:3px solid #fff;
-
     border-radius:3px;
-
     box-shadow:0 3px 8px rgba(0,0,0,.15);
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     color:#7a2c40;
-
     font-size:11px;
-
     letter-spacing:.5px;
 
     background-size:contain;
@@ -629,11 +500,6 @@
     grid-row:3;
   }
 
-
-  /* ============================================================
-     GALERIA
-     ============================================================ */
-
   .gallery{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -648,12 +514,9 @@
 
   .flipcard-inner{
     position:relative;
-
     width:100%;
     height:100%;
-
     transition:transform .6s;
-
     transform-style:preserve-3d;
   }
 
@@ -664,20 +527,13 @@
   .flipface{
     position:absolute;
     inset:0;
-
     backface-visibility:hidden;
-
     border-radius:3px;
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
-
     padding:8px;
-
     text-align:center;
   }
 
@@ -690,19 +546,14 @@
       );
 
     box-shadow:0 3px 8px rgba(0,0,0,.15);
-
     border:4px solid #fff;
   }
 
   .flip-front .ic{
     font-size:20px;
-
     width:100%;
-
     flex:1;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -715,39 +566,26 @@
 
   .flip-front .cap{
     font-size:9.5px;
-
     color:#6b1330;
-
     margin-top:4px;
-
     letter-spacing:.5px;
   }
 
   .flip-back{
     background:#fff5f7;
-
     border:1px solid #e9bcc7;
-
     transform:rotateY(180deg);
-
     font-size:10.5px;
-
     color:#7a2c40;
-
     line-height:1.4;
   }
 
-
-  /* ============================================================
-     MEDIDOR
-     ============================================================ */
+  /* medidor */
 
   .heart-tap{
     width:64px;
     height:64px;
-
     margin:10px auto 8px;
-
     border-radius:50%;
 
     background:
@@ -758,20 +596,15 @@
       );
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
     color:#fff;
-
     font-size:26px;
-
     border:none;
-
     cursor:pointer;
 
     box-shadow:0 6px 14px rgba(194,59,86,.4);
-
     user-select:none;
   }
 
@@ -781,1087 +614,1057 @@
 
   .tapline{
     font-size:11px;
-
     color:var(--heart);
-
     letter-spacing:.5px;
-
     margin-bottom:16px;
   }
 
   .meterlabel{
     font-size:10.5px;
-
     color:#a85f70;
-
     letter-spacing:1px;
-
     text-transform:uppercase;
-
     margin-bottom:6px;
   }
 
   .meterbar{
     width:100%;
-
     height:8px;
-
     background:#f3d3dc;
-
     border-radius:5px;
-
     overflow:hidden;
   }
 
   .meterfill{
     height:100%;
-
     width:0%;
-
     background:
       linear-gradient(
         90deg,
         #f19bb0,
         var(--heart)
       );
-
     transition:width .25s;
   }
 
   .meterpct{
     font-size:11px;
-
     color:var(--wine);
-
     margin-top:6px;
   }
 
-
-  /* ============================================================
-     SORTEO
-     ============================================================ */
+  /* sorteo */
 
   .sorteo-box{
     border:1.5px dashed #d99cad;
-
     border-radius:5px;
-
     padding:18px 14px;
-
     text-align:center;
-
     font-size:11.5px;
-
     color:#a85f70;
-
     margin-bottom:16px;
-
     cursor:pointer;
   }
 
   #sorteoResult{
     font-size:14px;
-
     color:var(--wine);
-
     font-weight:600;
   }
 
   .genbtn{
     display:block;
-
     margin:0 auto;
-
     background:var(--gold);
-
     color:#fff;
-
     border:none;
-
     padding:10px 20px;
-
     border-radius:3px;
-
     font-size:12.5px;
-
     cursor:pointer;
-
     font-family:inherit;
-
     letter-spacing:.5px;
   }
 
+  /* =====================================================
+     AJUSTE MÓVIL
+     Mantiene el libro centrado y evita desbordamientos.
+     ===================================================== */
 
-  /*
-    ============================================================
-    IMPORTANTE
-    ============================================================
+  @media (max-width:600px){
 
-    No hacemos aquí ningún cambio de diseño para celular.
+    body{
+      padding:20px 8px;
+      align-items:center;
+    }
 
-    El JavaScript de abajo escala TODO el libro como una sola pieza.
-    De esta forma el diseño de PC se conserva exactamente.
-  */
+    .stage{
+      width:100%;
+      max-width:900px;
+    }
 
+    .cover{
+      width:min(320px, calc(100vw - 30px));
+    }
+
+    .book-shell{
+      width:100%;
+      min-width:0;
+    }
+
+    .spread{
+      width:100%;
+      min-width:0;
+    }
+
+    .page{
+      min-width:0;
+    }
+
+    /*
+      Los radios se acomodan automáticamente.
+      Esto evita que "Demasiado" se salga de la página.
+    */
+    .radios{
+      width:100%;
+      max-width:100%;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 12px;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    .radios label{
+      font-size:11px;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+
+    .radios input{
+      flex-shrink:0;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<div class="viewport">
+<div class="stage">
 
-  <div class="book-scale" id="bookScale">
+  <!-- COVER -->
 
-    <div class="stage">
+  <div class="cover-wrap" id="coverWrap">
 
-      <!-- ======================================================
-           COVER
-           ====================================================== -->
+    <div class="cover" id="coverEl">
 
-      <div class="cover-wrap" id="coverWrap">
+      <div class="eyebrow"></div>
 
-        <div class="cover" id="coverEl">
+      <h1>
+        Feliz<br>
+        8avo Mesario
+      </h1>
 
-          <div class="eyebrow"></div>
+      <div class="hearts">
+        ♥ ♥ ♥
+      </div>
 
-          <h1>
-            Feliz<br>
-            8avo Mesario
-          </h1>
+      <div class="para">
+        Para Mi Reina
+      </div>
 
-          <div class="hearts">
-            ♥ ♥ ♥
+      <button class="open-btn" onclick="openBook()">
+        Abrir nuestro libro
+      </button>
+
+      <button class="heart-btn" onclick="openBook()">
+        ♥
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOOK -->
+
+  <div class="book" id="book">
+
+    <div class="book-shell">
+
+      <!-- Spread 0 -->
+
+      <div class="spread active" data-spread="0">
+
+        <div class="page left">
+
+          <div class="card" style="margin-top:70px;">
+
+            <div class="eyebrow">
+              Propiedad de
+            </div>
+
+            <h3>
+              Monito y Monita
+            </h3>
+
+            <div class="sub">
+              Edición exclusiva del changui equipo
+            </div>
+
           </div>
 
-          <div class="para">
-            Para Mi Reina
+        </div>
+
+
+        <div class="page right">
+
+          <div class="chap">
+            Prólogo
           </div>
 
-          <button
-            class="open-btn"
-            onclick="openBook()"
-          >
-            Abrir nuestro libro
-          </button>
+          <h2>
+            Índice de<br>
+            Nuestro Amor
+          </h2>
 
-          <button
-            class="heart-btn"
-            onclick="openBook()"
-          >
-            ♥
-          </button>
+          <p class="desc">
+            Hola mi amor, se lo mucho que te encantan los libros y en este 8avo mesario queria hacerte algo especial relacionado a los libros, este es un libro muy bello sobre nosotros.
+          </p>
+
+          <ol class="idx">
+
+            <li>
+              <span><b>I.</b> Cartita especial</span>
+              <span>1</span>
+            </li>
+
+            <li>
+              <span><b>II.</b> Collage</span>
+              <span>2</span>
+            </li>
+
+            <li>
+              <span><b>III.</b> Capsula del tiempo</span>
+              <span>3</span>
+            </li>
+
+            <li>
+              <span><b>IV.</b> Galeria de recuerdos</span>
+              <span>4</span>
+            </li>
+
+            <li>
+              <span><b>V.</b> Medidor de Amor</span>
+              <span>5</span>
+            </li>
+
+            <li>
+              <span><b>VI.</b> Sorteo Romantico</span>
+              <span>6</span>
+            </li>
+
+            <li>
+              <span><b>VII.</b> Algo que me recuerda a ti</span>
+              <span>7</span>
+            </li>
+
+          </ol>
 
         </div>
 
       </div>
 
 
-      <!-- ======================================================
-           BOOK
-           ====================================================== -->
+      <!-- Spread 1 -->
 
-      <div class="book" id="book">
+      <div class="spread" data-spread="1">
 
-        <div class="book-shell">
-
-
-          <!-- ==================================================
-               SPREAD 0
-               ================================================== -->
+        <div class="page left">
 
           <div
-            class="spread active"
-            data-spread="0"
+            class="chap"
+            style="text-align:center;"
           >
-
-            <div class="page left">
-
-              <div
-                class="card"
-                style="margin-top:70px;"
-              >
-
-                <div class="eyebrow">
-                  Propiedad de
-                </div>
-
-                <h3>
-                  Monito y Monita
-                </h3>
-
-                <div class="sub">
-                  Edición exclusiva del changui equipo
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="page right">
-
-              <div class="chap">
-                Prólogo
-              </div>
-
-              <h2>
-                Índice de<br>
-                Nuestro Amor
-              </h2>
-
-              <p class="desc">
-                Hola mi amor, se lo mucho que te encantan
-                los libros y en este 8avo mesario queria hacerte
-                algo especial relacionado a los libros, este es
-                un libro muy bello sobre nosotros.
-              </p>
-
-              <ol class="idx">
-
-                <li>
-                  <span>
-                    <b>I.</b>
-                    Cartita especial
-                  </span>
-                  <span>1</span>
-                </li>
-
-                <li>
-                  <span>
-                    <b>II.</b>
-                    Collage
-                  </span>
-                  <span>2</span>
-                </li>
-
-                <li>
-                  <span>
-                    <b>III.</b>
-                    Capsula del tiempo
-                  </span>
-                  <span>3</span>
-                </li>
-
-                <li>
-                  <span>
-                    <b>IV.</b>
-                    Galeria de recuerdos
-                  </span>
-                  <span>4</span>
-                </li>
-
-                <li>
-                  <span>
-                    <b>V.</b>
-                    Medidor de Amor
-                  </span>
-                  <span>5</span>
-                </li>
-
-                <li>
-                  <span>
-                    <b>VI.</b>
-                    Sorteo Romantico
-                  </span>
-                  <span>6</span>
-                </li>
-
-                <li>
-                  <span>
-                    <b>VII.</b>
-                    Algo que me recuerda a ti
-                  </span>
-                  <span>7</span>
-                </li>
-
-              </ol>
-
-            </div>
-
+            Antes de empezar
           </div>
 
-
-          <!-- ==================================================
-               SPREAD 1
-               ================================================== -->
+          <h2 style="text-align:center;">
+            Una Carta para Ti
+          </h2>
 
           <div
-            class="spread"
-            data-spread="1"
-          >
-
-            <div class="page left">
-
-              <div
-                class="chap"
-                style="text-align:center;"
-              >
-                Antes de empezar
-              </div>
-
-              <h2 style="text-align:center;">
-                Una Carta para Ti
-              </h2>
-
-              <div
-                style="
-                  font-size:12.5px;
-                  color:#7a2c40;
-                  line-height:1.9;
-                  white-space:pre-wrap;
-                  width:100%;
-                  min-height:260px;
-                "
-                contenteditable="true"
-              >Hola mi amoooor, estamos en nuestro octavo mesario. Te agradezco mucho mi amor por estos bellos 8 meses a tu lado han sido muy pero 
+            style="
+              font-size:12.5px;
+              color:#7a2c40;
+              line-height:1.9;
+              white-space:pre-wrap;
+              width:100%;
+              min-height:260px;
+            "
+            contenteditable="true"
+          >Hola mi amoooor, estamos en nuestro octavo mesario. Te agradezco mucho mi amor por estos bellos 8 meses a tu lado han sido muy pero 
 muy especiales a tu lado, como te he dicho me siento muy pero muy afortunado de tenerte en mi vida que formes parte de mi corazon y si se podria decir que de todo mi corazon, gracias en verdad mi amor por ser el motivo de todas mis sonrisas, de ser mi paz dia a dia y sobre todo ser mi compañia en este camino que se llama vida, quien diria que luego de 
 dos años estariamos aqui mi amor, empezamos como dos extraños y paramos siendo una bonita pareja creeme que yo me siento muy orgulloso de lo nuestro de como ha ido progresando y como seguira perdurando el amor por el resto de nuestras vidas y almas pq si mi amor sos mi alma gemela mi lazito rojo como te lo he dicho muchas veces y creeme que me siento tan pero tan feliz que saeas tu y no otra
 persona, porque lo que soy contigo no seria con nadie mas mi amor, el hombre que me converti a tu lado es la mejor version de mi y de verdad la mereces y mucho mas aun, gracias por estos bellos 8 meses mi amor, no sabes lo feliz que han sido pese a lo que he pasado siemrpe buscas sacarme una sonrisa y sobre todo alaegrarme mi corazon y de verdad te lo agradezco, gracias por verme siempre con ojos de amor en estos 8 meses amor.
 Felices 8 meses mi preciosa 
 Te amo mi Reina 👸🤍
-
-              </div>
-
-            </div>
-
-
-            <div class="page right">
-
-              <div
-                class="chap"
-                style="text-align:center;"
-              >
-                Nuestros Momentos
-              </div>
-
-              <h2 style="text-align:center;">
-                Collage de nuestros bellos momentos
-              </h2>
-
-              <div
-                class="collage"
-                id="collage"
-              >
-
-                <div
-                  class="collage-slot"
-                  style="background-image:url('foto1.jpeg')"
-                ></div>
-
-                <div
-                  class="collage-slot"
-                  style="background-image:url('foto2.jpeg')"
-                ></div>
-
-                <div
-                  class="collage-slot"
-                  style="background-image:url('foto3.jpeg')"
-                ></div>
-
-                <div
-                  class="collage-slot"
-                  style="background-image:url('foto4.jpeg')"
-                ></div>
-
-                <div
-                  class="collage-slot"
-                  style="background-image:url('foto5.jpeg')"
-                ></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- ==================================================
-               SPREAD 2
-               ================================================== -->
-
-          <div
-            class="spread"
-            data-spread="2"
-          >
-
-            <div class="page left">
-
-              <h2>
-                Cápsula del Tiempo
-              </h2>
-
-              <p class="desc">
-                Déjame un mensajito para recordar este aniversario.
-              </p>
-
-              <div class="row2">
-
-                <div class="field">
-
-                  <label>
-                    De
-                  </label>
-
-                  <input
-                    type="text"
-                    id="capsulaDe"
-                    value="Mi Amor"
-                  >
-
-                </div>
-
-                <div class="field">
-
-                  <label>
-                    Fecha especial
-                  </label>
-
-                  <input
-                    type="date"
-                    id="capsulaFecha"
-                    value="2026-08-20"
-                  >
-
-                </div>
-
-              </div>
-
-
-              <div class="row2">
-
-                <div class="field">
-
-                  <label>
-                    Nivel del amor
-                  </label>
-
-                  <select id="capsulaNivel">
-
-                    <option>
-                      Al infinito
-                    </option>
-
-                    <option>
-                      Muchísimo
-                    </option>
-
-                    <option>
-                      Todos los días más
-                    </option>
-
-                  </select>
-
-                </div>
-
-
-                <div class="field">
-
-                  <label>
-                    Tipo de beso favorito
-                  </label>
-
-                  <select id="capsulaBeso">
-
-                    <option>
-                      Tiernos
-                    </option>
-
-                    <option>
-                      Apasionados
-                    </option>
-
-                    <option>
-                      De buenos días
-                    </option>
-
-                  </select>
-
-                </div>
-
-              </div>
-
-
-              <div class="field">
-
-                <label>
-                  ¿Cuánto me extrañas cuando no estoy?
-                </label>
-
-                <div class="radios">
-
-                  <label>
-                    <input
-                      type="radio"
-                      name="extranas"
-                      value="Un poquito"
-                    >
-                    Un poquito
-                  </label>
-
-                  <label>
-                    <input
-                      type="radio"
-                      name="extranas"
-                      value="Mucho"
-                    >
-                    Mucho
-                  </label>
-
-                  <label>
-                    <input
-                      type="radio"
-                      name="extranas"
-                      value="Demasiado"
-                      checked
-                    >
-                    Demasiado
-                  </label>
-
-                </div>
-
-              </div>
-
-
-              <div class="field">
-
-                <label>
-                  Tu mensajito
-                </label>
-
-                <textarea
-                  id="capsulaMensaje"
-                  rows="4"
-                  style="
-                    width:100%;
-                    padding:8px 10px;
-                    border:1px solid #e3b7c2;
-                    border-radius:3px;
-                    background:#fff;
-                    font-family:inherit;
-                    font-size:12.5px;
-                    color:var(--wine);
-                    resize:vertical;
-                  "
-                  placeholder="Escribe aquí lo que quieras decirme..."
-                ></textarea>
-
-              </div>
-
-
-              <button
-                class="save-btn"
-                id="capsulaBtn"
-                onclick="enviarCapsula()"
-              >
-                Guardar Recuerdo
-              </button>
-
-            </div>
-
-
-            <div class="page right">
-
-              <h2>
-                Galería de Recuerdos
-              </h2>
-
-              <p class="desc">
-                Toca cada foto para darle la vuelta
-                y descubrir lo que esconde.
-              </p>
-
-              <div
-                class="gallery"
-                id="gallery"
-              ></div>
-
-            </div>
-
-          </div>
-
-
-          <!-- ==================================================
-               SPREAD 3
-               ================================================== -->
-
-          <div
-            class="spread"
-            data-spread="3"
-          >
-
-            <div class="page left">
-
-              <h2>
-                Medidor de Amor
-              </h2>
-
-              <p class="desc">
-                Toca mi corazón repetidamente para llenarlo
-                de tu amor.
-              </p>
-
-              <div class="center">
-
-                <button
-                  class="heart-tap"
-                  id="loveHeart"
-                  onclick="tapHeart()"
-                >
-                  ♥
-                </button>
-
-                <div class="tapline">
-                  ¡Sigue tocando! 💕
-                </div>
-
-              </div>
-
-              <div class="meterlabel">
-                Nivel actual de amor
-              </div>
-
-              <div class="meterbar">
-
-                <div
-                  class="meterfill"
-                  id="meterFill"
-                ></div>
-
-              </div>
-
-              <div
-                class="meterpct"
-                id="meterPct"
-              >
-                0%
-              </div>
-
-            </div>
-
-
-            <div class="page right">
-
-              <p class="desc">
-                ¿No sabes qué hacer hoy? toca la caja
-                de recuerdos para generar un ticket jijiji
-              </p>
-
-              <div
-                class="sorteo-box"
-                id="sorteoBox"
-                onclick="generarVale()"
-              >
-
-                <span id="sorteoResult">
-                  (Toca aqui para ver tu premio)
-                </span>
-
-              </div>
-
-              <button
-                class="genbtn"
-                onclick="generarVale()"
-              >
-                GENERAR VALE 🎫
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <!-- ==================================================
-               SPREAD 4
-               ================================================== -->
-
-          <div
-            class="spread"
-            data-spread="4"
-          >
-
-            <div
-              class="page left"
-              style="
-                display:flex;
-                flex-direction:column;
-                align-items:center;
-                justify-content:center;
-                text-align:center;
-              "
-            >
-
-              <h2 style="margin-bottom:10px;">
-                Algo que me recuerda a ti
-              </h2>
-
-              <p
-                class="desc"
-                style="
-                  max-width:280px;
-                  margin:0 auto 12px;
-                "
-              >
-                Desde que te conozco ahora que veo un girasol
-                me recuerda tanto a ti, se que es tu flor favorita
-                y creeme cada que los veo en la calle o en una foto
-                incluso en una publicacion me hace pensar en ti,
-                asi que por eso aqui tienes uno hecho por mi,
-                Te amo mi amor.
-              </p>
-
-
-              <svg
-                viewBox="0 0 200 260"
-                width="190"
-                height="247"
-              >
-
-                <defs>
-
-                  <linearGradient
-                    id="petalGrad"
-                    x1="0"
-                    y1="0"
-                    x2="0"
-                    y2="1"
-                  >
-
-                    <stop
-                      offset="0%"
-                      stop-color="#f7c948"
-                    />
-
-                    <stop
-                      offset="60%"
-                      stop-color="#eda52e"
-                    />
-
-                    <stop
-                      offset="100%"
-                      stop-color="#d3841c"
-                    />
-
-                  </linearGradient>
-
-
-                  <linearGradient
-                    id="stemGrad"
-                    x1="0"
-                    y1="0"
-                    x2="1"
-                    y2="0"
-                  >
-
-                    <stop
-                      offset="0%"
-                      stop-color="#4c7a2e"
-                    />
-
-                    <stop
-                      offset="100%"
-                      stop-color="#6ea344"
-                    />
-
-                  </linearGradient>
-
-
-                  <linearGradient
-                    id="leafGrad"
-                    x1="0"
-                    y1="0"
-                    x2="1"
-                    y2="1"
-                  >
-
-                    <stop
-                      offset="0%"
-                      stop-color="#6ea344"
-                    />
-
-                    <stop
-                      offset="100%"
-                      stop-color="#3f6423"
-                    />
-
-                  </linearGradient>
-
-
-                  <radialGradient
-                    id="centerGrad"
-                    cx="35%"
-                    cy="30%"
-                    r="75%"
-                  >
-
-                    <stop
-                      offset="0%"
-                      stop-color="#8a5a2c"
-                    />
-
-                    <stop
-                      offset="55%"
-                      stop-color="#6b431f"
-                    />
-
-                    <stop
-                      offset="100%"
-                      stop-color="#4a2c12"
-                    />
-
-                  </radialGradient>
-
-
-                  <filter
-                    id="softShadow"
-                    x="-40%"
-                    y="-40%"
-                    width="180%"
-                    height="180%"
-                  >
-
-                    <feDropShadow
-                      dx="0"
-                      dy="4"
-                      stdDeviation="4"
-                      flood-color="#3d0a1c"
-                      flood-opacity="0.35"
-                    />
-
-                  </filter>
-
-                </defs>
-
-
-                <!-- tallo -->
-
-                <path
-                  d="M100 148 C 96 175, 96 205, 100 248"
-                  stroke="url(#stemGrad)"
-                  stroke-width="6"
-                  fill="none"
-                  stroke-linecap="round"
-                />
-
-
-                <!-- hojas -->
-
-                <path
-                  d="M99 188 C 74 186, 56 198, 46 218 C 70 220, 90 210, 99 192 Z"
-                  fill="url(#leafGrad)"
-                />
-
-                <path
-                  d="M99 190 C 84 195, 68 204, 50 214"
-                  stroke="#2f4f19"
-                  stroke-width="1.4"
-                  fill="none"
-                  opacity=".6"
-                />
-
-                <path
-                  d="M101 210 C 126 210, 144 222, 152 240 C 128 240, 108 230, 100 214 Z"
-                  fill="url(#leafGrad)"
-                />
-
-                <path
-                  d="M101 213 C 116 219, 132 227, 148 237"
-                  stroke="#2f4f19"
-                  stroke-width="1.4"
-                  fill="none"
-                  opacity=".6"
-                />
-
-
-                <!-- flor -->
-
-                <g
-                  transform="translate(100,95)"
-                  filter="url(#softShadow)"
-                >
-
-                  <g id="petal">
-
-                    <ellipse
-                      cx="0"
-                      cy="-56"
-                      rx="14"
-                      ry="32"
-                      fill="url(#petalGrad)"
-                    />
-
-                    <ellipse
-                      cx="0"
-                      cy="-56"
-                      rx="5"
-                      ry="26"
-                      fill="#f7c948"
-                      opacity=".45"
-                    />
-
-                  </g>
-
-
-                  <use href="#petal" transform="rotate(24)"/>
-                  <use href="#petal" transform="rotate(48)"/>
-                  <use href="#petal" transform="rotate(72)"/>
-                  <use href="#petal" transform="rotate(96)"/>
-                  <use href="#petal" transform="rotate(120)"/>
-                  <use href="#petal" transform="rotate(144)"/>
-                  <use href="#petal" transform="rotate(168)"/>
-                  <use href="#petal" transform="rotate(192)"/>
-                  <use href="#petal" transform="rotate(216)"/>
-                  <use href="#petal" transform="rotate(240)"/>
-                  <use href="#petal" transform="rotate(264)"/>
-                  <use href="#petal" transform="rotate(288)"/>
-                  <use href="#petal" transform="rotate(312)"/>
-                  <use href="#petal" transform="rotate(336)"/>
-
-
-                  <circle
-                    cx="0"
-                    cy="0"
-                    r="36"
-                    fill="url(#centerGrad)"
-                  />
-
-
-                  <g
-                    fill="#2e1b0b"
-                    opacity=".55"
-                  >
-
-                    <circle cx="0" cy="0" r="2"/>
-
-                    <circle cx="5" cy="-4" r="1.7"/>
-                    <circle cx="-6" cy="-3" r="1.7"/>
-                    <circle cx="1" cy="7" r="1.7"/>
-
-                    <circle cx="10" cy="4" r="1.7"/>
-                    <circle cx="-10" cy="5" r="1.7"/>
-                    <circle cx="-2" cy="-10" r="1.7"/>
-
-                    <circle cx="15" cy="-6" r="1.6"/>
-                    <circle cx="-15" cy="-4" r="1.6"/>
-                    <circle cx="6" cy="14" r="1.6"/>
-
-                    <circle cx="-8" cy="13" r="1.6"/>
-                    <circle cx="14" cy="10" r="1.6"/>
-                    <circle cx="-14" cy="9" r="1.6"/>
-
-                    <circle cx="0" cy="-18" r="1.6"/>
-                    <circle cx="20" cy="1" r="1.5"/>
-                    <circle cx="-20" cy="0" r="1.5"/>
-
-                    <circle cx="10" cy="-15" r="1.5"/>
-                    <circle cx="-11" cy="-14" r="1.5"/>
-                    <circle cx="17" cy="14" r="1.5"/>
-
-                    <circle cx="-17" cy="13" r="1.5"/>
-                    <circle cx="2" cy="22" r="1.5"/>
-                    <circle cx="-4" cy="21" r="1.5"/>
-
-                    <circle cx="25" cy="-8" r="1.3"/>
-                    <circle cx="-25" cy="-7" r="1.3"/>
-                    <circle cx="22" cy="18" r="1.3"/>
-                    <circle cx="-23" cy="17" r="1.3"/>
-                    <circle cx="-1" cy="-26" r="1.3"/>
-                    <circle cx="8" cy="27" r="1.3"/>
-
-                  </g>
-
-
-                  <ellipse
-                    cx="-10"
-                    cy="-12"
-                    rx="14"
-                    ry="9"
-                    fill="#c98a3f"
-                    opacity=".18"
-                  />
-
-                </g>
-
-              </svg>
-
-            </div>
-
-
-            <div
-              class="page right"
-              style="text-align:center;"
-            >
-
-              <div
-                style="
-                  color:var(--heart);
-                  font-size:20px;
-                  margin-bottom:10px;
-                "
-              >
-                ♥
-              </div>
-
-              <h2 style="text-align:center;">
-                Te amo, Mi Amor
-              </h2>
-
-              <p
-                class="desc"
-                style="
-                  text-align:center;
-                  max-width:340px;
-                  margin:0 auto 22px;
-                "
-              >
-                Gracias por estos bellos 8 meses mi amor,
-                han sido los mejores del mundo desde diciembre
-                del 25 hasta hoy 20/08/2026 cada vez mas cerca
-                del año y vamos por muchos pero muchisimos años
-                mas juntos, porque tu eres lo que quiero en el
-                resto de mi vida y si te lo he dicho demasiadas
-                veces, pero es la verdad mi amor tu eres la mujer
-                de mis sueños, gracias por amarme mucho,
-                Te amo con todo mi ser mi amor
-              </p>
-
-              <button
-                class="save-btn"
-                onclick="closeBook()"
-              >
-                Cerrar nuestro libro
-              </button>
-
-            </div>
-
           </div>
 
         </div>
 
 
-        <!-- ====================================================
-             NAV
-             ==================================================== -->
+        <div class="page right">
 
-        <div class="nav">
+          <div
+            class="chap"
+            style="text-align:center;"
+          >
+            Nuestros Momentos
+          </div>
+
+          <h2 style="text-align:center;">
+            Collage de nuestros bellos momentos
+          </h2>
+
+          <div class="collage" id="collage">
+
+            <div
+              class="collage-slot"
+              style="background-image:url('foto1.jpeg')"
+            ></div>
+
+            <div
+              class="collage-slot"
+              style="background-image:url('foto2.jpeg')"
+            ></div>
+
+            <div
+              class="collage-slot"
+              style="background-image:url('foto3.jpeg')"
+            ></div>
+
+            <div
+              class="collage-slot"
+              style="background-image:url('foto4.jpeg')"
+            ></div>
+
+            <div
+              class="collage-slot"
+              style="background-image:url('foto5.jpeg')"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Spread 2 -->
+
+      <div class="spread" data-spread="2">
+
+        <div class="page left">
+
+          <h2>
+            Cápsula del Tiempo
+          </h2>
+
+          <p class="desc">
+            Déjame un mensajito para recordar este aniversario.
+          </p>
+
+
+          <div class="row2">
+
+            <div class="field">
+
+              <label>
+                De
+              </label>
+
+              <input
+                type="text"
+                id="capsulaDe"
+                value="Mi Amor"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Fecha especial
+              </label>
+
+              <input
+                type="date"
+                id="capsulaFecha"
+                value="2026-08-20"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="row2">
+
+            <div class="field">
+
+              <label>
+                Nivel del amor
+              </label>
+
+              <select id="capsulaNivel">
+
+                <option>
+                  Al infinito
+                </option>
+
+                <option>
+                  Muchísimo
+                </option>
+
+                <option>
+                  Todos los días más
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Tipo de beso favorito
+              </label>
+
+              <select id="capsulaBeso">
+
+                <option>
+                  Tiernos
+                </option>
+
+                <option>
+                  Apasionados
+                </option>
+
+                <option>
+                  De buenos días
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              ¿Cuánto me extrañas cuando no estoy?
+            </label>
+
+            <div class="radios">
+
+              <label>
+                <input
+                  type="radio"
+                  name="extranas"
+                  value="Un poquito"
+                >
+                Un poquito
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="extranas"
+                  value="Mucho"
+                >
+                Mucho
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="extranas"
+                  value="Demasiado"
+                  checked
+                >
+                Demasiado
+              </label>
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Tu mensajito
+            </label>
+
+            <textarea
+              id="capsulaMensaje"
+              rows="4"
+              style="
+                width:100%;
+                padding:8px 10px;
+                border:1px solid #e3b7c2;
+                border-radius:3px;
+                background:#fff;
+                font-family:inherit;
+                font-size:12.5px;
+                color:var(--wine);
+                resize:vertical;
+              "
+              placeholder="Escribe aquí lo que quieras decirme..."
+            ></textarea>
+
+          </div>
+
 
           <button
-            id="btnPrev"
-            onclick="go(-1)"
+            class="save-btn"
+            id="capsulaBtn"
+            onclick="enviarCapsula()"
           >
-            ‹ Anterior
+            Guardar Recuerdo
           </button>
 
-          <button
-            id="btnNext"
-            class="primary"
-            onclick="go(1)"
+        </div>
+
+
+        <div class="page right">
+
+          <h2>
+            Galería de Recuerdos
+          </h2>
+
+          <p class="desc">
+            Toca cada foto para darle la vuelta y descubrir lo que esconde.
+          </p>
+
+          <div
+            class="gallery"
+            id="gallery"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Spread 3 -->
+
+      <div class="spread" data-spread="3">
+
+        <div class="page left">
+
+          <h2>
+            Medidor de Amor
+          </h2>
+
+          <p class="desc">
+            Toca mi corazón repetidamente para llenarlo de tu amor.
+          </p>
+
+          <div class="center">
+
+            <button
+              class="heart-tap"
+              id="loveHeart"
+              onclick="tapHeart()"
+            >
+              ♥
+            </button>
+
+            <div class="tapline">
+              ¡Sigue tocando! 💕
+            </div>
+
+          </div>
+
+
+          <div class="meterlabel">
+            Nivel actual de amor
+          </div>
+
+          <div class="meterbar">
+
+            <div
+              class="meterfill"
+              id="meterFill"
+            ></div>
+
+          </div>
+
+          <div
+            class="meterpct"
+            id="meterPct"
           >
-            Siguiente ›
+            0%
+          </div>
+
+        </div>
+
+
+        <div class="page right">
+
+          <p class="desc">
+            ¿No sabes qué hacer hoy? toca la caja de recuerdos para generar un ticket jijiji
+          </p>
+
+          <div
+            class="sorteo-box"
+            id="sorteoBox"
+            onclick="generarVale()"
+          >
+
+            <span id="sorteoResult">
+              (Toca aqui para ver tu premio)
+            </span>
+
+          </div>
+
+          <button
+            class="genbtn"
+            onclick="generarVale()"
+          >
+            GENERAR VALE 🎫
           </button>
 
         </div>
 
       </div>
+
+
+      <!-- Spread 4 -->
+
+      <div class="spread" data-spread="4">
+
+        <div
+          class="page left"
+          style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+          "
+        >
+
+          <h2 style="margin-bottom:10px;">
+            Algo que me recuerda a ti
+          </h2>
+
+          <p
+            class="desc"
+            style="
+              max-width:280px;
+              margin:0 auto 12px;
+            "
+          >
+            Desde que te conozco ahora que veo un girasol me recuerda tanto a ti, se que es tu flor favorita y creeme cada que los veo en la calle o en una foto incluso en una publicacion me hace pensar en ti, asi que por eso aqui tienes uno hecho por mi, Te amo mi amor.
+          </p>
+
+
+          <svg
+            viewBox="0 0 200 260"
+            width="190"
+            height="247"
+          >
+
+            <defs>
+
+              <linearGradient
+                id="petalGrad"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
+
+                <stop
+                  offset="0%"
+                  stop-color="#f7c948"
+                />
+
+                <stop
+                  offset="60%"
+                  stop-color="#eda52e"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#d3841c"
+                />
+
+              </linearGradient>
+
+
+              <linearGradient
+                id="stemGrad"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="0"
+              >
+
+                <stop
+                  offset="0%"
+                  stop-color="#4c7a2e"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#6ea344"
+                />
+
+              </linearGradient>
+
+
+              <linearGradient
+                id="leafGrad"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
+
+                <stop
+                  offset="0%"
+                  stop-color="#6ea344"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#3f6423"
+                />
+
+              </linearGradient>
+
+
+              <radialGradient
+                id="centerGrad"
+                cx="35%"
+                cy="30%"
+                r="75%"
+              >
+
+                <stop
+                  offset="0%"
+                  stop-color="#8a5a2c"
+                />
+
+                <stop
+                  offset="55%"
+                  stop-color="#6b431f"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#4a2c12"
+                />
+
+              </radialGradient>
+
+
+              <filter
+                id="softShadow"
+                x="-40%"
+                y="-40%"
+                width="180%"
+                height="180%"
+              >
+
+                <feDropShadow
+                  dx="0"
+                  dy="4"
+                  stdDeviation="4"
+                  flood-color="#3d0a1c"
+                  flood-opacity="0.35"
+                />
+
+              </filter>
+
+            </defs>
+
+
+            <path
+              d="M100 148 C 96 175, 96 205, 100 248"
+              stroke="url(#stemGrad)"
+              stroke-width="6"
+              fill="none"
+              stroke-linecap="round"
+            />
+
+
+            <path
+              d="M99 188 C 74 186, 56 198, 46 218 C 70 220, 90 210, 99 192 Z"
+              fill="url(#leafGrad)"
+            />
+
+
+            <path
+              d="M99 190 C 84 195, 68 204, 50 214"
+              stroke="#2f4f19"
+              stroke-width="1.4"
+              fill="none"
+              opacity=".6"
+            />
+
+
+            <path
+              d="M101 210 C 126 210, 144 222, 152 240 C 128 240, 108 230, 100 214 Z"
+              fill="url(#leafGrad)"
+            />
+
+
+            <path
+              d="M101 213 C 116 219, 132 227, 148 237"
+              stroke="#2f4f19"
+              stroke-width="1.4"
+              fill="none"
+              opacity=".6"
+            />
+
+
+            <g
+              transform="translate(100,95)"
+              filter="url(#softShadow)"
+            >
+
+              <g id="petal">
+
+                <ellipse
+                  cx="0"
+                  cy="-56"
+                  rx="14"
+                  ry="32"
+                  fill="url(#petalGrad)"
+                />
+
+                <ellipse
+                  cx="0"
+                  cy="-56"
+                  rx="5"
+                  ry="26"
+                  fill="#f7c948"
+                  opacity=".45"
+                />
+
+              </g>
+
+
+              <use
+                href="#petal"
+                transform="rotate(24)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(48)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(72)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(96)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(120)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(144)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(168)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(192)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(216)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(240)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(264)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(288)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(312)"
+              />
+
+              <use
+                href="#petal"
+                transform="rotate(336)"
+              />
+
+
+              <circle
+                cx="0"
+                cy="0"
+                r="36"
+                fill="url(#centerGrad)"
+              />
+
+
+              <g
+                fill="#2e1b0b"
+                opacity=".55"
+              >
+
+                <circle cx="0" cy="0" r="2"/>
+
+                <circle cx="5" cy="-4" r="1.7"/>
+                <circle cx="-6" cy="-3" r="1.7"/>
+                <circle cx="1" cy="7" r="1.7"/>
+
+                <circle cx="10" cy="4" r="1.7"/>
+                <circle cx="-10" cy="5" r="1.7"/>
+                <circle cx="-2" cy="-10" r="1.7"/>
+
+                <circle cx="15" cy="-6" r="1.6"/>
+                <circle cx="-15" cy="-4" r="1.6"/>
+                <circle cx="6" cy="14" r="1.6"/>
+
+                <circle cx="-8" cy="13" r="1.6"/>
+                <circle cx="14" cy="10" r="1.6"/>
+                <circle cx="-14" cy="9" r="1.6"/>
+
+                <circle cx="0" cy="-18" r="1.6"/>
+                <circle cx="20" cy="1" r="1.5"/>
+                <circle cx="-20" cy="0" r="1.5"/>
+
+                <circle cx="10" cy="-15" r="1.5"/>
+                <circle cx="-11" cy="-14" r="1.5"/>
+                <circle cx="17" cy="14" r="1.5"/>
+
+                <circle cx="-17" cy="13" r="1.5"/>
+                <circle cx="2" cy="22" r="1.5"/>
+                <circle cx="-4" cy="21" r="1.5"/>
+
+                <circle cx="25" cy="-8" r="1.3"/>
+                <circle cx="-25" cy="-7" r="1.3"/>
+                <circle cx="22" cy="18" r="1.3"/>
+
+                <circle cx="-23" cy="17" r="1.3"/>
+                <circle cx="-1" cy="-26" r="1.3"/>
+                <circle cx="8" cy="27" r="1.3"/>
+
+              </g>
+
+
+              <ellipse
+                cx="-10"
+                cy="-12"
+                rx="14"
+                ry="9"
+                fill="#c98a3f"
+                opacity=".18"
+              />
+
+            </g>
+
+          </svg>
+
+        </div>
+
+
+        <div
+          class="page right"
+          style="text-align:center;"
+        >
+
+          <div
+            style="
+              color:var(--heart);
+              font-size:20px;
+              margin-bottom:10px;
+            "
+          >
+            ♥
+          </div>
+
+          <h2 style="text-align:center;">
+            Te amo, Mi Amor
+          </h2>
+
+          <p
+            class="desc"
+            style="
+              text-align:center;
+              max-width:340px;
+              margin:0 auto 22px;
+            "
+          >
+            Gracias por estos bellos 8 meses mi amor, han sido los mejores del mundo desde diciembre del 25 hasta hoy 20/08/2026 cada vez mas cerca del año y vamos por muchos pero muchisimos años mas juntos, porque tu eres lo que quiero en el resto de mi vida y si te lo he dicho demasiadas veces, pero es la verdad mi amor tu eres la mujer de mis sueños, gracias por amarme mucho, Te amo con todo mi ser mi amor
+          </p>
+
+          <button
+            class="save-btn"
+            onclick="closeBook()"
+          >
+            Cerrar nuestro libro
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="nav">
+
+      <button
+        id="btnPrev"
+        onclick="go(-1)"
+      >
+        ‹ Anterior
+      </button>
+
+      <button
+        id="btnNext"
+        class="primary"
+        onclick="go(1)"
+      >
+        Siguiente ›
+      </button>
 
     </div>
 
@@ -1872,9 +1675,9 @@ Te amo mi Reina 👸🤍
 
 <script>
 
-  /* ============================================================
-     FOTOS
-     ============================================================ */
+  // =====================================================
+  // FOTOS
+  // =====================================================
 
   const fotos = [
 
@@ -1917,9 +1720,9 @@ Te amo mi Reina 👸🤍
   ];
 
 
-  /* ============================================================
-     VALES
-     ============================================================ */
+  // =====================================================
+  // VALES
+  // =====================================================
 
   const valesSorteo = [
 
@@ -1938,12 +1741,13 @@ Te amo mi Reina 👸🤍
   ];
 
 
-  /* ============================================================
-     CREAR GALERIA
-     ============================================================ */
+  // =====================================================
+  // GALERIA
+  // =====================================================
 
   const gallery =
     document.getElementById('gallery');
+
 
   fotos.forEach((f,i)=>{
 
@@ -1953,8 +1757,9 @@ Te amo mi Reina 👸🤍
     card.className =
       'flipcard';
 
-    card.onclick =
-      ()=>card.classList.toggle('flipped');
+    card.onclick = () =>
+      card.classList.toggle('flipped');
+
 
     card.innerHTML = `
 
@@ -1967,7 +1772,11 @@ Te amo mi Reina 👸🤍
 
           <div
             class="ic"
-            style="${f.img ? `background-image:url('${f.img}')` : ''}"
+            style="${
+              f.img
+                ? `background-image:url('${f.img}')`
+                : ''
+            }"
           >
             ${f.img ? '' : f.icon}
           </div>
@@ -1991,9 +1800,9 @@ Te amo mi Reina 👸🤍
   });
 
 
-  /* ============================================================
-     FORMSPREE
-     ============================================================ */
+  // =====================================================
+  // FORMSPREE
+  // =====================================================
 
   const FORMSPREE_URL =
     "https://formspree.io/f/xvkplzaj";
@@ -2005,12 +1814,12 @@ Te amo mi Reina 👸🤍
       document.getElementById('capsulaBtn');
 
     const de =
-      document.getElementById('capsulaDe').value ||
-      "Mi Amor";
+      document.getElementById('capsulaDe').value
+      || "Mi Amor";
 
     const fecha =
-      document.getElementById('capsulaFecha').value ||
-      "";
+      document.getElementById('capsulaFecha').value
+      || "";
 
     const nivel =
       document.getElementById('capsulaNivel').value;
@@ -2024,16 +1833,17 @@ Te amo mi Reina 👸🤍
       ).value;
 
     const mensaje =
-      document
-        .getElementById('capsulaMensaje')
-        .value
-        .trim();
+      document.getElementById('capsulaMensaje')
+      .value
+      .trim();
 
 
     if(btn){
 
       btn.disabled = true;
-      btn.textContent = 'Enviando...';
+
+      btn.textContent =
+        'Enviando...';
 
     }
 
@@ -2055,32 +1865,33 @@ Te amo mi Reina 👸🤍
 
               De:de,
 
-              'Fecha especial':fecha,
+              'Fecha especial':
+                fecha,
 
-              'Nivel del amor':nivel,
+              'Nivel del amor':
+                nivel,
 
-              'Tipo de beso favorito':beso,
+              'Tipo de beso favorito':
+                beso,
 
-              'Cuánto me extraña':extranas,
+              'Cuánto me extraña':
+                extranas,
 
-              Mensajito:mensaje,
+              Mensajito:
+                mensaje,
 
               _subject:
                 `Cápsula del Tiempo de ${de}`
 
             })
-
           }
         );
 
 
-      if(!respuesta.ok){
-
+      if(!respuesta.ok)
         throw new Error(
           'Error al enviar'
         );
-
-      }
 
 
       if(btn){
@@ -2090,7 +1901,8 @@ Te amo mi Reina 👸🤍
 
       }
 
-    }catch(error){
+    }
+    catch(error){
 
       console.error(error);
 
@@ -2120,9 +1932,9 @@ Te amo mi Reina 👸🤍
   }
 
 
-  /* ============================================================
-     ABRIR / CERRAR LIBRO
-     ============================================================ */
+  // =====================================================
+  // ABRIR / CERRAR LIBRO
+  // =====================================================
 
   function openBook(){
 
@@ -2138,12 +1950,6 @@ Te amo mi Reina 👸🤍
 
     render();
 
-    /*
-      Recalculamos inmediatamente el tamaño.
-    */
-
-    adaptarLibro();
-
   }
 
 
@@ -2157,14 +1963,12 @@ Te amo mi Reina 👸🤍
       .getElementById('coverWrap')
       .style.display='flex';
 
-    adaptarLibro();
-
   }
 
 
-  /* ============================================================
-     NAVEGACION
-     ============================================================ */
+  // =====================================================
+  // NAVEGACION
+  // =====================================================
 
   let spread=0;
 
@@ -2174,25 +1978,26 @@ Te amo mi Reina 👸🤍
 
   function render(){
 
-    spreads.forEach(
-      s =>
-        s.classList.toggle(
-          'active',
-          +s.dataset.spread === spread
-        )
-    );
+    spreads.forEach(s => {
+
+      s.classList.toggle(
+        'active',
+        +s.dataset.spread === spread
+      );
+
+    });
 
 
     document
       .getElementById('btnPrev')
       .disabled =
-        spread===0;
+      spread===0;
 
 
     document
       .getElementById('btnNext')
       .disabled =
-        spread===spreads.length-1;
+      spread===spreads.length-1;
 
   }
 
@@ -2207,9 +2012,7 @@ Te amo mi Reina 👸🤍
       target < 0 ||
       target > spreads.length-1
     ){
-
       return;
-
     }
 
 
@@ -2217,14 +2020,12 @@ Te amo mi Reina 👸🤍
 
     render();
 
-    adaptarLibro();
-
   }
 
 
-  /* ============================================================
-     MEDIDOR DE AMOR
-     ============================================================ */
+  // =====================================================
+  // MEDIDOR DE AMOR
+  // =====================================================
 
   let love=0;
 
@@ -2241,17 +2042,19 @@ Te amo mi Reina 👸🤍
     document
       .getElementById('meterFill')
       .style.width =
-        love+'%';
+      love+'%';
 
 
     document
       .getElementById('meterPct')
       .textContent =
-        love+'%';
+      love+'%';
 
 
     const h =
-      document.getElementById('loveHeart');
+      document.getElementById(
+        'loveHeart'
+      );
 
 
     h.style.transform =
@@ -2259,16 +2062,19 @@ Te amo mi Reina 👸🤍
 
 
     setTimeout(
-      ()=>h.style.transform='scale(1)',
+      () => {
+        h.style.transform =
+          'scale(1)';
+      },
       120
     );
 
   }
 
 
-  /* ============================================================
-     SORTEO
-     ============================================================ */
+  // =====================================================
+  // SORTEO
+  // =====================================================
 
   function generarVale(){
 
@@ -2284,10 +2090,14 @@ Te amo mi Reina 👸🤍
     document
       .getElementById('sorteoResult')
       .textContent =
-        w;
+      w;
 
   }
 
+
+  // =====================================================
+  // TECLA V
+  // =====================================================
 
   document.addEventListener(
     'keydown',
@@ -2304,75 +2114,6 @@ Te amo mi Reina 👸🤍
 
     }
   );
-
-
-  /* ============================================================
-     ADAPTACIÓN RESPONSIVE
-     ============================================================
-
-     ESTA ES LA PARTE MÁS IMPORTANTE.
-
-     El diseño original mide 900px de ancho.
-
-     En PC:
-         escala = 1
-
-     En celular:
-         escala = ancho disponible / 900
-
-     De esta forma NO cambiamos el diseño.
-
-     Simplemente reducimos todo proporcionalmente.
-  */
-
-  function adaptarLibro(){
-
-    const escala =
-      Math.min(
-        window.innerWidth / 920,
-        window.innerHeight / 650,
-        1
-      );
-
-
-    const bookScale =
-      document.getElementById('bookScale');
-
-
-    bookScale.style.transform =
-      `scale(${escala})`;
-
-  }
-
-
-  /* ============================================================
-     AL CAMBIAR TAMAÑO DE PANTALLA
-     ============================================================ */
-
-  window.addEventListener(
-    'resize',
-    adaptarLibro
-  );
-
-
-  window.addEventListener(
-    'orientationchange',
-    ()=>{
-      setTimeout(
-        adaptarLibro,
-        150
-      );
-    }
-  );
-
-
-  /* ============================================================
-     INICIALIZAR
-     ============================================================ */
-
-  adaptarLibro();
-
-  render();
 
 </script>
 
