@@ -3,286 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 <title>Nuestra Historia</title>
 
 <style>
-
-:root{
-  --wine:#6b1330;
-  --wine-dark:#3d0a1c;
-  --rose:#fdeef1;
-  --rose-soft:#fbdfe6;
-  --pink:#f4a6bc;
-  --gold:#d98a5f;
-  --heart:#c23b56;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html,
-body{
-  margin:0;
-  width:100%;
-  min-height:100%;
-}
-
-body{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-family:Georgia,'Times New Roman',serif;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      #7a1533 0%,
-      #2a0614 60%,
-      #150309 100%
-    );
-
-  padding:20px;
-  overflow-x:hidden;
-}
-
-/* =========================================================
-   CONTENEDOR PRINCIPAL
-========================================================= */
-
-.stage{
-  width:100%;
-  max-width:900px;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-
-/* =========================================================
-   PORTADA
-========================================================= */
-
-.label-top{
-  text-align:center;
-  color:#f7c9d4;
-  letter-spacing:3px;
-  font-size:11px;
-  text-transform:uppercase;
-  margin-bottom:14px;
-  opacity:.85;
-}
-
-.cover-wrap{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.cover{
-  width:320px;
-  max-width:90vw;
-
-  background:
-    linear-gradient(
-      160deg,
-      #5c1129,
-      #3d0a1c 70%
-    );
-
-  border:1px solid #a8536b;
-  border-radius:4px;
-
-  box-shadow:
-    0 45px 70px -18px rgba(0,0,0,.8),
-    0 15px 25px -8px rgba(0,0,0,.6),
-    inset 0 0 0 6px #4a0e22,
-    inset 0 0 0 8px #7a2c40,
-    inset -10px 0 25px -12px rgba(0,0,0,.5);
-
-  padding:34px 26px;
-
-  text-align:center;
-  color:#f2c9d3;
-
-  position:relative;
-}
-
-.cover .eyebrow{
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#e29aab;
-  margin-bottom:14px;
-}
-
-.cover h1{
-  font-size:34px;
-  margin:0 0 18px;
-  color:#fbe3ea;
-  font-weight:400;
-  line-height:1.15;
-}
-
-.cover .hearts{
-  letter-spacing:6px;
-  color:var(--heart);
-  margin-bottom:16px;
-}
-
-.cover .para{
-  font-size:13px;
-  letter-spacing:1px;
-  margin-bottom:26px;
-  color:#f0c6d1;
-}
-
-.open-btn{
-  width:100%;
-
-  background:var(--rose-soft);
-  color:var(--wine);
-
-  border:none;
-
-  padding:12px 10px;
-
-  font-size:13px;
-  letter-spacing:1px;
-
-  border-radius:3px;
-
-  cursor:pointer;
-  font-family:inherit;
-
-  margin-bottom:14px;
-
-  transition:.2s;
-}
-
-.open-btn:hover{
-  background:#fff;
-}
-
-.cover .hint{
-  font-size:10.5px;
-  color:#c98a9a;
-  margin-bottom:14px;
-}
-
-.heart-btn{
-  width:34px;
-  height:34px;
-
-  border-radius:50%;
-
-  background:var(--heart);
-  border:none;
-
-  color:white;
-
-  font-size:15px;
-
-  cursor:pointer;
-
-  box-shadow:
-    0 0 12px rgba(194,59,86,.7);
-}
-
-/* =========================================================
-   LIBRO
-========================================================= */
-
-.book{
-  display:none;
-  width:100%;
-}
-
-.book.active{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-/* =========================================================
-   CONTENEDOR DEL LIBRO
-========================================================= */
-
-.book-shell{
-  position:relative;
-
-  width:100%;
-  max-width:900px;
-
-  aspect-ratio:900 / 460;
-
-  border-radius:4px;
-
-  perspective:2200px;
-
-  box-shadow:
-    0 45px 70px -20px rgba(0,0,0,.75),
-    0 15px 25px -8px rgba(0,0,0,.55),
-    0 2px 0 rgba(255,255,255,.04) inset;
-
-  overflow:hidden;
-}
-
-/* =========================================================
-   DOBLE PÁGINA
-========================================================= */
-
-.spread{
-  display:none;
-
-  width:100%;
-  height:100%;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:0;
-
-  background:#f6d9df;
-
-  border-radius:4px;
-
-  overflow:hidden;
-
-  position:absolute;
-  inset:0;
-}
-
-.spread.active{
-  display:grid;
-}
-
-/* sombra central */
-
-.spread::after{
-  content:'';
-
-  position:absolute;
-
-  top:0;
-  bottom:0;
-
-  left:50%;
-
-  width:70px;
-
-  transform:translateX(-50%);
-
-  pointer-events:none;
-
-  z-index:5;
-
-  background:
-    linear-gradient(
+  :root{
+    --wine: #6b1330;
+    --wine-dark: #3d0a1c;
+    --rose: #fdeef1;
+    --rose-soft: #fbdfe6;
+    --pink: #f4a6bc;
+    --gold: #d98a5f;
+    --heart: #c23b56;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  html{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+  }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Georgia','Times New Roman',serif;
+    background:
+      radial-gradient(
+        ellipse at center,
+        #7a1533 0%,
+        #2a0614 60%,
+        #150309 100%
+      );
+    padding:30px 10px;
+    overflow-x:hidden;
+  }
+
+  .stage{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+  }
+
+  /* =====================================================
+     PORTADA
+     ===================================================== */
+
+  .label-top{
+    text-align:center;
+    color:#f7c9d4;
+    letter-spacing:3px;
+    font-size:11px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    opacity:.85;
+  }
+
+  .cover-wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:2200px;
+    width:100%;
+  }
+
+  .cover{
+    width:min(320px,92vw);
+    background:linear-gradient(160deg,#5c1129,#3d0a1c 70%);
+    border:1px solid #a8536b;
+    border-radius:4px;
+    box-shadow:
+      0 45px 70px -18px rgba(0,0,0,.8),
+      0 15px 25px -8px rgba(0,0,0,.6),
+      inset 0 0 0 6px #4a0e22,
+      inset 0 0 0 8px #7a2c40,
+      inset -10px 0 25px -12px rgba(0,0,0,.5);
+    padding:34px 26px;
+    text-align:center;
+    color:#f2c9d3;
+    position:relative;
+  }
+
+  .cover .eyebrow{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#e29aab;
+    margin-bottom:14px;
+  }
+
+  .cover h1{
+    font-size:clamp(25px,8vw,34px);
+    margin:0 0 18px;
+    color:#fbe3ea;
+    font-weight:400;
+    line-height:1.15;
+  }
+
+  .cover .hearts{
+    letter-spacing:6px;
+    color:var(--heart);
+    margin-bottom:16px;
+  }
+
+  .cover .para{
+    font-size:13px;
+    letter-spacing:1px;
+    margin-bottom:26px;
+    color:#f0c6d1;
+  }
+
+  .open-btn{
+    width:100%;
+    background:var(--rose-soft);
+    color:var(--wine);
+    border:none;
+    padding:12px 10px;
+    font-size:13px;
+    letter-spacing:1px;
+    border-radius:3px;
+    cursor:pointer;
+    font-family:inherit;
+    margin-bottom:14px;
+    transition:.2s;
+  }
+
+  .open-btn:hover{
+    background:#fff;
+  }
+
+  .cover .hint{
+    font-size:10.5px;
+    color:#c98a9a;
+    margin-bottom:14px;
+  }
+
+  .heart-btn{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:var(--heart);
+    border:none;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 0 12px rgba(194,59,86,.7);
+  }
+
+
+  /* =====================================================
+     LIBRO
+     ===================================================== */
+
+  .book{
+    display:none;
+    width:100%;
+  }
+
+  .book.active{
+    display:block;
+  }
+
+  .book-shell{
+    position:relative;
+    width:100%;
+    border-radius:4px;
+    perspective:2200px;
+    min-height:460px;
+    box-shadow:
+      0 45px 70px -20px rgba(0,0,0,.75),
+      0 15px 25px -8px rgba(0,0,0,.55),
+      0 2px 0 rgba(255,255,255,.04) inset;
+  }
+
+  .spread{
+    display:none;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    width:100%;
+    background:#f6d9df;
+    border-radius:4px;
+    overflow:hidden;
+    min-height:460px;
+    position:relative;
+  }
+
+  .spread.active{
+    display:grid;
+  }
+
+  /* Sombra del lomo central */
+
+  .spread::after{
+    content:'';
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:70px;
+    transform:translateX(-50%);
+    pointer-events:none;
+    z-index:5;
+    background:linear-gradient(
       90deg,
       rgba(0,0,0,0) 0%,
       rgba(80,10,30,.14) 38%,
@@ -290,1055 +218,857 @@ body{
       rgba(80,10,30,.14) 62%,
       rgba(0,0,0,0) 100%
     );
-}
+  }
 
-/* =========================================================
-   PÁGINAS
-========================================================= */
+  .page{
+    padding:30px 28px;
+    position:relative;
+    min-width:0;
+  }
 
-.page{
-  padding:30px 28px;
+  .page.left{
+    background:linear-gradient(120deg,#fbe4ea,#f6d3dc);
+    box-shadow:inset -18px 0 30px -22px rgba(50,5,20,.45);
+  }
 
-  position:relative;
+  .page.right{
+    background:#fdf1f4;
+    box-shadow:inset 18px 0 30px -22px rgba(50,5,20,.35);
+  }
 
-  min-width:0;
-
-  overflow:hidden;
-}
-
-.page.left{
-  background:
-    linear-gradient(
-      120deg,
-      #fbe4ea,
-      #f6d3dc
-    );
-
-  box-shadow:
-    inset -18px 0 30px -22px rgba(50,5,20,.45);
-}
-
-.page.right{
-  background:#fdf1f4;
-
-  box-shadow:
-    inset 18px 0 30px -22px rgba(50,5,20,.35);
-}
-
-.page.page-full{
-  grid-column:1 / -1;
-
-  background:
-    linear-gradient(
+  .page.page-full{
+    grid-column:1/-1;
+    background:linear-gradient(
       90deg,
       #fbe4ea,
       #fdf1f4 50%,
       #fdf1f4
     );
-
-  padding:44px 70px;
-
-  box-shadow:none;
-}
-
-.page::before{
-  content:'';
-
-  position:absolute;
-
-  inset:0;
-
-  pointer-events:none;
-
-  box-shadow:
-    inset 0 14px 20px -18px rgba(80,20,35,.3),
-    inset 0 -14px 20px -18px rgba(80,20,35,.22);
-}
-
-/* =========================================================
-   TEXTOS
-========================================================= */
-
-.chap{
-  font-size:10.5px;
-
-  letter-spacing:2px;
-
-  color:var(--wine);
-
-  text-transform:uppercase;
-
-  margin-bottom:6px;
-
-  opacity:.75;
-}
-
-.page h2{
-  font-size:24px;
-
-  color:var(--wine);
-
-  margin:0 0 14px;
-
-  font-weight:400;
-}
-
-.page p.desc{
-  font-size:12.5px;
-
-  color:#8a4a58;
-
-  line-height:1.5;
-
-  margin-bottom:18px;
-}
-
-.footer-corner{
-  position:absolute;
-
-  bottom:12px;
-
-  font-size:10px;
-
-  color:#b97d8c;
-
-  letter-spacing:1px;
-}
-
-.footer-corner.l{
-  left:24px;
-}
-
-.footer-corner.r{
-  right:24px;
-}
-
-/* =========================================================
-   TARJETA
-========================================================= */
-
-.card{
-  background:#fbe9ee;
-
-  border:1px solid #e9bcc7;
-
-  border-radius:3px;
-
-  padding:22px 18px;
-
-  text-align:center;
-
-  margin-top:60px;
-}
-
-.card .eyebrow{
-  font-size:10px;
-
-  letter-spacing:2px;
-
-  color:#a85f70;
-
-  margin-bottom:8px;
-}
-
-.card h3{
-  color:var(--wine);
-
-  font-size:19px;
-
-  margin:0 0 8px;
-
-  font-weight:400;
-}
-
-.card .sub{
-  font-size:10.5px;
-
-  color:#a85f70;
-}
-
-/* =========================================================
-   INDICE
-========================================================= */
-
-ol.idx{
-  list-style:none;
-
-  padding:0;
-
-  margin:0;
-}
-
-ol.idx li{
-  display:flex;
-
-  justify-content:space-between;
-
-  font-size:13px;
-
-  color:var(--wine);
-
-  padding:8px 0;
-
-  border-bottom:1px dashed #e3b7c2;
-
-  gap:8px;
-}
-
-ol.idx li b{
-  margin-right:6px;
-
-  font-weight:600;
-}
-
-/* =========================================================
-   NAVEGACION
-========================================================= */
-
-.nav{
-  width:100%;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  margin-top:16px;
-}
-
-.nav button{
-  background:#fbe0e6;
-
-  color:var(--wine);
-
-  border:1px solid #e9b7c2;
-
-  border-radius:3px;
-
-  padding:9px 16px;
-
-  font-size:12px;
-
-  cursor:pointer;
-
-  font-family:inherit;
-
-  letter-spacing:.5px;
-}
-
-.nav button.primary{
-  background:var(--wine);
-
-  color:#fbe0e6;
-
-  border-color:var(--wine);
-}
-
-.nav button:disabled{
-  opacity:.35;
-
-  cursor:default;
-}
-
-.nav .mid{
-  font-size:11px;
-
-  color:#c98a9a;
-
-  letter-spacing:1px;
-}
-
-/* =========================================================
-   FORMULARIO
-========================================================= */
-
-.field{
-  margin-bottom:14px;
-}
-
-.field label{
-  display:block;
-
-  font-size:10.5px;
-
-  color:#a85f70;
-
-  letter-spacing:1px;
-
-  text-transform:uppercase;
-
-  margin-bottom:5px;
-}
-
-.field input,
-.field select{
-  width:100%;
-
-  padding:8px 10px;
-
-  border:1px solid #e3b7c2;
-
-  border-radius:3px;
-
-  background:#fff;
-
-  font-family:inherit;
-
-  font-size:12.5px;
-
-  color:var(--wine);
-}
-
-.row2{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:12px;
-}
-
-.radios{
-  display:flex;
-
-  gap:14px;
-
-  font-size:12px;
-
-  color:var(--wine);
-
-  flex-wrap:wrap;
-}
-
-.radios label{
-  display:flex;
-
-  align-items:center;
-
-  gap:5px;
-}
-
-.save-btn{
-  background:var(--heart);
-
-  color:#fff;
-
-  border:none;
-
-  padding:10px 18px;
-
-  border-radius:3px;
-
-  font-size:12.5px;
-
-  cursor:pointer;
-
-  font-family:inherit;
-
-  letter-spacing:.5px;
-}
-
-/* =========================================================
-   COLLAGE
-========================================================= */
-
-.collage{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  grid-template-rows:90px 90px 90px;
-
-  gap:8px;
-
-  height:290px;
-}
-
-.collage-slot{
-  background:
-    linear-gradient(
-      145deg,
-      #f6c6d1,
-      #f19bb0
-    );
-
-  border:3px solid #fff;
-
-  border-radius:3px;
-
-  box-shadow:
-    0 3px 8px rgba(0,0,0,.15);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  color:#7a2c40;
-
-  font-size:11px;
-
-  letter-spacing:.5px;
-
-  background-size:cover;
-
-  background-repeat:no-repeat;
-
-  background-position:center;
-}
-
-.collage-slot:nth-child(1){
-  grid-column:1;
-
-  grid-row:1 / span 2;
-}
-
-.collage-slot:nth-child(2){
-  grid-column:2;
-
-  grid-row:1;
-}
-
-.collage-slot:nth-child(3){
-  grid-column:2;
-
-  grid-row:2;
-}
-
-.collage-slot:nth-child(4){
-  grid-column:1;
-
-  grid-row:3;
-}
-
-.collage-slot:nth-child(5){
-  grid-column:2;
-
-  grid-row:3;
-}
-
-/* =========================================================
-   GALERIA
-========================================================= */
-
-.gallery{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:14px;
-}
-
-.flipcard{
-  perspective:800px;
-
-  height:170px;
-
-  cursor:pointer;
-
-  min-width:0;
-}
-
-.flipcard-inner{
-  position:relative;
-
-  width:100%;
-  height:100%;
-
-  transition:transform .6s;
-
-  transform-style:preserve-3d;
-}
-
-.flipcard.flipped .flipcard-inner{
-  transform:rotateY(180deg);
-}
-
-.flipface{
-  position:absolute;
-
-  inset:0;
-
-  backface-visibility:hidden;
-
-  border-radius:3px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:8px;
-
-  text-align:center;
-}
-
-.flip-front{
-  background:
-    linear-gradient(
-      145deg,
-      var(--f1,#f6c6d1),
-      var(--f2,#f19bb0)
-    );
-
-  box-shadow:
-    0 3px 8px rgba(0,0,0,.15);
-
-  border:4px solid #fff;
-}
-
-.flip-front .ic{
-  font-size:20px;
-
-  width:100%;
-
-  flex:1;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  background-size:cover;
-
-  background-repeat:no-repeat;
-
-  background-position:center;
-
-  border-radius:3px;
-
-  min-height:0;
-}
-
-.flip-front .cap{
-  font-size:9.5px;
-
-  color:#6b1330;
-
-  margin-top:4px;
-
-  letter-spacing:.5px;
-}
-
-.flip-back{
-  background:#fff5f7;
-
-  border:1px solid #e9bcc7;
-
-  transform:rotateY(180deg);
-
-  font-size:10.5px;
-
-  color:#7a2c40;
-
-  line-height:1.4;
-
-  overflow:auto;
-}
-
-/* =========================================================
-   MEDIDOR
-========================================================= */
-
-.heart-tap{
-  width:64px;
-  height:64px;
-
-  margin:10px auto 8px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle at 35% 30%,
-      #f28aa0,
-      var(--heart)
-    );
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  color:#fff;
-
-  font-size:26px;
-
-  border:none;
-
-  cursor:pointer;
-
-  box-shadow:
-    0 6px 14px rgba(194,59,86,.4);
-
-  user-select:none;
-}
-
-.center{
-  text-align:center;
-}
-
-.tapline{
-  font-size:11px;
-
-  color:var(--heart);
-
-  letter-spacing:.5px;
-
-  margin-bottom:16px;
-}
-
-.meterlabel{
-  font-size:10.5px;
-
-  color:#a85f70;
-
-  letter-spacing:1px;
-
-  text-transform:uppercase;
-
-  margin-bottom:6px;
-}
-
-.meterbar{
-  width:100%;
-
-  height:8px;
-
-  background:#f3d3dc;
-
-  border-radius:5px;
-
-  overflow:hidden;
-}
-
-.meterfill{
-  height:100%;
-
-  width:0%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #f19bb0,
-      var(--heart)
-    );
-
-  transition:width .25s;
-}
-
-.meterpct{
-  font-size:11px;
-
-  color:var(--wine);
-
-  margin-top:6px;
-}
-
-/* =========================================================
-   SORTEO
-========================================================= */
-
-.sorteo-box{
-  border:1.5px dashed #d99cad;
-
-  border-radius:5px;
-
-  padding:18px 14px;
-
-  text-align:center;
-
-  font-size:11.5px;
-
-  color:#a85f70;
-
-  margin-bottom:16px;
-
-  cursor:pointer;
-}
-
-#sorteoResult{
-  font-size:14px;
-
-  color:var(--wine);
-
-  font-weight:600;
-}
-
-.genbtn{
-  display:block;
-
-  margin:0 auto;
-
-  background:var(--gold);
-
-  color:#fff;
-
-  border:none;
-
-  padding:10px 20px;
-
-  border-radius:3px;
-
-  font-size:12.5px;
-
-  cursor:pointer;
-
-  font-family:inherit;
-
-  letter-spacing:.5px;
-}
-
-/* =========================================================
-   RESPONSIVE
-   EL LIBRO SIEMPRE CONSERVA SU FORMA
-========================================================= */
-
-@media (max-width:900px){
-
-  body{
-    padding:15px;
+    padding:44px 70px;
+    box-shadow:none;
   }
 
-  .stage{
-    max-width:100%;
-  }
-
-  .book-shell{
-    width:100%;
-    max-width:900px;
-
-    /*
-      IMPORTANTE:
-      Mantiene las dos páginas juntas
-      y conserva la proporción del libro.
-    */
-    aspect-ratio:900 / 460;
-  }
-
-  .page{
-    padding:24px 20px;
-  }
-
-  .page h2{
-    font-size:21px;
-  }
-
-  .page p.desc{
-    font-size:11.5px;
-  }
-
-  .card{
-    margin-top:45px;
-  }
-
-  .collage{
-    grid-template-rows:
-      calc((100% - 16px) / 3)
-      calc((100% - 16px) / 3)
-      calc((100% - 16px) / 3);
-
-    height:260px;
-  }
-
-  .flipcard{
-    height:145px;
-  }
-
-}
-
-
-/* =========================================================
-   TELEFONOS
-========================================================= */
-
-@media (max-width:600px){
-
-  body{
-    padding:10px;
-  }
-
-  .stage{
-    width:100%;
-  }
-
-  /*
-    El libro se mantiene como doble página.
-    No se convierte en una columna.
-  */
-
-  .book-shell{
-    width:100%;
-
-    aspect-ratio:900 / 460;
-
-    border-radius:3px;
-  }
-
-  .spread{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .page{
-    padding:16px 12px;
-  }
-
-  .page h2{
-    font-size:15px;
-
-    line-height:1.2;
-
-    margin-bottom:8px;
+  .page::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    box-shadow:
+      inset 0 14px 20px -18px rgba(80,20,35,.3),
+      inset 0 -14px 20px -18px rgba(80,20,35,.22);
   }
 
   .chap{
-    font-size:7px;
+    font-size:10.5px;
+    letter-spacing:2px;
+    color:var(--wine);
+    text-transform:uppercase;
+    margin-bottom:6px;
+    opacity:.75;
+  }
 
-    letter-spacing:1px;
-
-    margin-bottom:4px;
+  .page h2{
+    font-size:24px;
+    color:var(--wine);
+    margin:0 0 14px;
+    font-weight:400;
   }
 
   .page p.desc{
-    font-size:8px;
-
-    line-height:1.35;
-
-    margin-bottom:9px;
+    font-size:12.5px;
+    color:#8a4a58;
+    line-height:1.5;
+    margin-bottom:18px;
   }
 
-  .card{
-    padding:12px 8px;
+  .footer-corner{
+    position:absolute;
+    bottom:12px;
+    font-size:10px;
+    color:#b97d8c;
+    letter-spacing:1px;
+  }
 
-    margin-top:35px;
+  .footer-corner.l{
+    left:24px;
+  }
+
+  .footer-corner.r{
+    right:24px;
+  }
+
+
+  /* =====================================================
+     TARJETA
+     ===================================================== */
+
+  .card{
+    background:#fbe9ee;
+    border:1px solid #e9bcc7;
+    border-radius:3px;
+    padding:22px 18px;
+    text-align:center;
+    margin-top:60px;
   }
 
   .card .eyebrow{
-    font-size:7px;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#a85f70;
+    margin-bottom:8px;
   }
 
   .card h3{
-    font-size:13px;
+    color:var(--wine);
+    font-size:19px;
+    margin:0 0 8px;
+    font-weight:400;
   }
 
   .card .sub{
-    font-size:7px;
+    font-size:10.5px;
+    color:#a85f70;
+  }
+
+
+  /* =====================================================
+     ÍNDICE
+     ===================================================== */
+
+  ol.idx{
+    list-style:none;
+    padding:0;
+    margin:0;
   }
 
   ol.idx li{
-    font-size:7px;
-
-    padding:4px 0;
-  }
-
-  .row2{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:var(--wine);
+    padding:8px 0;
+    border-bottom:1px dashed #e3b7c2;
     gap:5px;
   }
 
+  ol.idx li b{
+    margin-right:6px;
+    font-weight:600;
+  }
+
+
+  /* =====================================================
+     NAVEGACIÓN
+     ===================================================== */
+
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:16px;
+  }
+
+  .nav button{
+    background:#fbe0e6;
+    color:var(--wine);
+    border:1px solid #e9b7c2;
+    border-radius:3px;
+    padding:9px 16px;
+    font-size:12px;
+    cursor:pointer;
+    font-family:inherit;
+    letter-spacing:.5px;
+  }
+
+  .nav button.primary{
+    background:var(--wine);
+    color:#fbe0e6;
+    border-color:var(--wine);
+  }
+
+  .nav button:disabled{
+    opacity:.35;
+    cursor:default;
+  }
+
+  .nav .mid{
+    font-size:11px;
+    color:#c98a9a;
+    letter-spacing:1px;
+  }
+
+
+  /* =====================================================
+     FORMULARIO
+     ===================================================== */
+
   .field{
-    margin-bottom:7px;
+    margin-bottom:14px;
   }
 
   .field label{
-    font-size:6.5px;
-
-    letter-spacing:.5px;
-
-    margin-bottom:3px;
+    display:block;
+    font-size:10.5px;
+    color:#a85f70;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
   }
 
   .field input,
   .field select{
-    padding:5px 5px;
+    width:100%;
+    padding:8px 10px;
+    border:1px solid #e3b7c2;
+    border-radius:3px;
+    background:#fff;
+    font-family:inherit;
+    font-size:12.5px;
+    color:var(--wine);
+  }
 
-    font-size:7px;
+  .row2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
   }
 
   .radios{
-    gap:5px;
+    display:flex;
+    gap:14px;
+    font-size:12px;
+    color:var(--wine);
+  }
 
-    font-size:7px;
+  .radios label{
+    display:flex;
+    align-items:center;
+    gap:5px;
   }
 
   .save-btn{
-    padding:6px 9px;
-
-    font-size:7px;
+    background:var(--heart);
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:3px;
+    font-size:12.5px;
+    cursor:pointer;
+    font-family:inherit;
+    letter-spacing:.5px;
   }
 
+
+  /* =====================================================
+     COLLAGE
+     ===================================================== */
+
   .collage{
-    height:170px;
-
-    gap:4px;
-
-    grid-template-rows:
-      53px
-      53px
-      53px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:90px 90px 90px;
+    gap:8px;
+    height:290px;
   }
 
   .collage-slot{
-    border-width:2px;
-
-    font-size:6px;
+    background:linear-gradient(145deg,#f6c6d1,#f19bb0);
+    border:3px solid #fff;
+    border-radius:3px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#7a2c40;
+    font-size:11px;
+    letter-spacing:.5px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
   }
 
+  .collage-slot:nth-child(1){
+    grid-column:1;
+    grid-row:1/span 2;
+  }
+
+  .collage-slot:nth-child(2){
+    grid-column:2;
+    grid-row:1;
+  }
+
+  .collage-slot:nth-child(3){
+    grid-column:2;
+    grid-row:2;
+  }
+
+  .collage-slot:nth-child(4){
+    grid-column:1;
+    grid-row:3;
+  }
+
+  .collage-slot:nth-child(5){
+    grid-column:2;
+    grid-row:3;
+  }
+
+
+  /* =====================================================
+     GALERÍA
+     ===================================================== */
+
   .gallery{
-    gap:6px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
   }
 
   .flipcard{
-    height:95px;
+    perspective:800px;
+    height:170px;
+    cursor:pointer;
+  }
+
+  .flipcard-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .6s;
+    transform-style:preserve-3d;
+  }
+
+  .flipcard.flipped .flipcard-inner{
+    transform:rotateY(180deg);
+  }
+
+  .flipface{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:3px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:8px;
+    text-align:center;
   }
 
   .flip-front{
-    border-width:2px;
+    background:linear-gradient(
+      145deg,
+      var(--f1,#f6c6d1),
+      var(--f2,#f19bb0)
+    );
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+    border:4px solid #fff;
+  }
+
+  .flip-front .ic{
+    font-size:20px;
+    width:100%;
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    border-radius:3px;
   }
 
   .flip-front .cap{
-    font-size:6px;
+    font-size:9.5px;
+    color:#6b1330;
+    margin-top:4px;
+    letter-spacing:.5px;
   }
 
   .flip-back{
-    font-size:6.5px;
-
-    padding:5px;
+    background:#fff5f7;
+    border:1px solid #e9bcc7;
+    transform:rotateY(180deg);
+    font-size:10.5px;
+    color:#7a2c40;
+    line-height:1.4;
   }
 
+
+  /* =====================================================
+     MEDIDOR
+     ===================================================== */
+
   .heart-tap{
-    width:42px;
-    height:42px;
+    width:64px;
+    height:64px;
+    margin:10px auto 8px;
+    border-radius:50%;
+    background:radial-gradient(
+      circle at 35% 30%,
+      #f28aa0,
+      var(--heart)
+    );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:26px;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(194,59,86,.4);
+    user-select:none;
+  }
 
-    font-size:17px;
-
-    margin:5px auto;
+  .center{
+    text-align:center;
   }
 
   .tapline{
-    font-size:7px;
-
-    margin-bottom:8px;
+    font-size:11px;
+    color:var(--heart);
+    letter-spacing:.5px;
+    margin-bottom:16px;
   }
 
   .meterlabel{
-    font-size:7px;
+    font-size:10.5px;
+    color:#a85f70;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
   }
 
   .meterbar{
-    height:5px;
+    width:100%;
+    height:8px;
+    background:#f3d3dc;
+    border-radius:5px;
+    overflow:hidden;
+  }
+
+  .meterfill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(
+      90deg,
+      #f19bb0,
+      var(--heart)
+    );
+    transition:width .25s;
   }
 
   .meterpct{
-    font-size:7px;
+    font-size:11px;
+    color:var(--wine);
+    margin-top:6px;
   }
 
+
+  /* =====================================================
+     SORTEO
+     ===================================================== */
+
   .sorteo-box{
-    padding:9px 5px;
-
-    font-size:7px;
-
-    margin-bottom:8px;
+    border:1.5px dashed #d99cad;
+    border-radius:5px;
+    padding:18px 14px;
+    text-align:center;
+    font-size:11.5px;
+    color:#a85f70;
+    margin-bottom:16px;
+    cursor:pointer;
   }
 
   #sorteoResult{
-    font-size:8px;
+    font-size:14px;
+    color:var(--wine);
+    font-weight:600;
   }
 
   .genbtn{
-    padding:6px 8px;
-
-    font-size:7px;
+    display:block;
+    margin:0 auto;
+    background:var(--gold);
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:3px;
+    font-size:12.5px;
+    cursor:pointer;
+    font-family:inherit;
+    letter-spacing:.5px;
   }
 
-  .nav{
-    margin-top:9px;
+
+  /* =====================================================
+     RESPONSIVE — TABLET
+     ===================================================== */
+
+  @media (max-width:800px){
+
+    body{
+      padding:15px 8px;
+    }
+
+    .stage{
+      width:100%;
+      max-width:760px;
+    }
+
+    .page{
+      padding:24px 20px;
+    }
+
+    .page h2{
+      font-size:21px;
+    }
+
+    .page p.desc{
+      font-size:11px;
+    }
+
+    .card{
+      margin-top:45px;
+    }
+
+    .collage{
+      height:250px;
+      grid-template-rows:77px 77px 77px;
+    }
+
+    .gallery{
+      gap:8px;
+    }
+
+    .flipcard{
+      height:145px;
+    }
   }
 
-  .nav button{
-    padding:6px 9px;
 
-    font-size:8px;
+  /* =====================================================
+     RESPONSIVE — CELULAR
+     ===================================================== */
+
+  @media (max-width:600px){
+
+    body{
+      padding:10px 5px;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+    }
+
+    .stage{
+      width:100%;
+      max-width:100%;
+      margin:0 auto;
+    }
+
+    .book-shell{
+      width:100%;
+      min-height:0;
+      margin:0 auto;
+    }
+
+    /*
+      IMPORTANTE:
+
+      El libro NO se convierte en una sola columna.
+      Las dos páginas siguen juntas.
+    */
+
+    .spread{
+      width:100%;
+      min-height:0;
+      grid-template-columns:1fr 1fr;
+    }
+
+    .page{
+      min-width:0;
+      padding:18px 12px;
+    }
+
+    .page.page-full{
+      padding:25px 20px;
+    }
+
+    /* Texto */
+
+    .chap{
+      font-size:7px;
+      letter-spacing:1.2px;
+      margin-bottom:4px;
+    }
+
+    .page h2{
+      font-size:clamp(14px,4vw,20px);
+      line-height:1.15;
+      margin-bottom:8px;
+    }
+
+    .page p.desc{
+      font-size:clamp(8px,2.4vw,11px);
+      line-height:1.4;
+      margin-bottom:10px;
+    }
+
+    /* Carta */
+
+    .page.left > div[contenteditable="true"]{
+      font-size:clamp(8px,2.4vw,11px) !important;
+      line-height:1.55 !important;
+      min-height:0 !important;
+      max-height:300px;
+      overflow-y:auto;
+    }
+
+    /* Índice */
+
+    ol.idx li{
+      font-size:clamp(8px,2.5vw,11px);
+      padding:5px 0;
+    }
+
+    /* Tarjeta */
+
+    .card{
+      padding:15px 10px;
+      margin-top:30px !important;
+    }
+
+    .card .eyebrow{
+      font-size:7px;
+    }
+
+    .card h3{
+      font-size:14px;
+    }
+
+    .card .sub{
+      font-size:7px;
+    }
+
+    /* Collage */
+
+    .collage{
+      width:100%;
+      height:auto;
+      aspect-ratio:1/1;
+      grid-template-rows:repeat(3,1fr);
+      gap:4px;
+    }
+
+    .collage-slot{
+      border-width:2px;
+      font-size:7px;
+      min-width:0;
+      min-height:0;
+    }
+
+    /* Galería */
+
+    .gallery{
+      grid-template-columns:1fr 1fr;
+      gap:5px;
+    }
+
+    .flipcard{
+      height:105px;
+    }
+
+    .flipface{
+      padding:4px;
+    }
+
+    .flip-front{
+      border-width:2px;
+    }
+
+    .flip-front .cap{
+      font-size:7px;
+      margin-top:2px;
+    }
+
+    .flip-front .ic{
+      font-size:14px;
+    }
+
+    .flip-back{
+      font-size:7px;
+      line-height:1.25;
+      padding:6px;
+    }
+
+    /* Formulario */
+
+    .row2{
+      grid-template-columns:1fr 1fr;
+      gap:5px;
+    }
+
+    .field{
+      margin-bottom:8px;
+    }
+
+    .field label{
+      font-size:7px;
+      letter-spacing:.6px;
+      margin-bottom:3px;
+    }
+
+    .field input,
+    .field select{
+      padding:5px;
+      font-size:8px;
+      min-width:0;
+    }
+
+    .field textarea{
+      font-size:8px !important;
+      padding:5px !important;
+    }
+
+    .radios{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      font-size:8px;
+    }
+
+    .save-btn{
+      padding:7px 10px;
+      font-size:8px;
+    }
+
+    /* Medidor */
+
+    .heart-tap{
+      width:45px;
+      height:45px;
+      font-size:19px;
+      margin:5px auto;
+    }
+
+    .tapline{
+      font-size:7px;
+      margin-bottom:9px;
+    }
+
+    .meterlabel{
+      font-size:7px;
+      margin-bottom:4px;
+    }
+
+    .meterbar{
+      height:5px;
+    }
+
+    .meterpct{
+      font-size:8px;
+      margin-top:3px;
+    }
+
+    /* Sorteo */
+
+    .sorteo-box{
+      padding:10px 6px;
+      font-size:8px;
+      margin-bottom:8px;
+    }
+
+    #sorteoResult{
+      font-size:9px;
+    }
+
+    .genbtn{
+      padding:7px 9px;
+      font-size:8px;
+    }
+
+    /* Navegación */
+
+    .nav{
+      margin-top:9px;
+    }
+
+    .nav button{
+      padding:6px 9px;
+      font-size:8px;
+    }
+
+    .nav .mid{
+      font-size:7px;
+    }
+
+    /* Girasol */
+
+    .page.left svg{
+      width:min(42vw,150px);
+      height:auto;
+      max-height:210px;
+    }
+
+    /* Página final */
+
+    .page.right p.desc{
+      max-width:100% !important;
+    }
   }
 
-  .nav .mid{
-    font-size:7px;
+
+  /* =====================================================
+     CELULARES MUY PEQUEÑOS
+     ===================================================== */
+
+  @media (max-width:380px){
+
+    body{
+      padding:7px 3px;
+    }
+
+    .page{
+      padding:14px 9px;
+    }
+
+    .page h2{
+      font-size:13px;
+    }
+
+    .page p.desc{
+      font-size:7px;
+    }
+
+    .collage{
+      gap:3px;
+    }
+
+    .flipcard{
+      height:92px;
+    }
+
+    .card{
+      padding:11px 7px;
+    }
+
+    .card h3{
+      font-size:12px;
+    }
+
+    .field input,
+    .field select{
+      font-size:7px;
+    }
+
+    .save-btn{
+      font-size:7px;
+    }
+
+    .nav button{
+      font-size:7px;
+      padding:5px 7px;
+    }
   }
-
-}
-
-
-/* =========================================================
-   TELEFONOS MUY PEQUEÑOS
-========================================================= */
-
-@media (max-width:380px){
-
-  body{
-    padding:7px;
-  }
-
-  .page{
-    padding:12px 9px;
-  }
-
-  .page h2{
-    font-size:13px;
-  }
-
-  .page p.desc{
-    font-size:7px;
-  }
-
-  .collage{
-    height:145px;
-
-    grid-template-rows:
-      45px
-      45px
-      45px;
-  }
-
-  .flipcard{
-    height:82px;
-  }
-
-  .card{
-    margin-top:25px;
-  }
-
-}
-
-
-/* =========================================================
-   PANTALLAS MUY BAJAS
-========================================================= */
-
-@media (max-height:600px) and (min-width:601px){
-
-  body{
-    align-items:flex-start;
-
-    padding-top:15px;
-    padding-bottom:15px;
-  }
-
-  .book-shell{
-    max-height:calc(100vh - 90px);
-
-    width:min(
-      900px,
-      calc((100vh - 90px) * 900 / 460)
-    );
-
-    aspect-ratio:900 / 460;
-  }
-
-}
 
 </style>
 </head>
@@ -1349,7 +1079,7 @@ ol.idx li b{
 
   <!-- =====================================================
        PORTADA
-  ====================================================== -->
+       ===================================================== -->
 
   <div class="cover-wrap" id="coverWrap">
 
@@ -1370,15 +1100,11 @@ ol.idx li b{
         Para Mi Reina
       </div>
 
-      <button
-        class="open-btn"
-        onclick="openBook()">
+      <button class="open-btn" onclick="openBook()">
         Abrir nuestro libro
       </button>
 
-      <button
-        class="heart-btn"
-        onclick="openBook()">
+      <button class="heart-btn" onclick="openBook()">
         ♥
       </button>
 
@@ -1389,7 +1115,7 @@ ol.idx li b{
 
   <!-- =====================================================
        LIBRO
-  ====================================================== -->
+       ===================================================== -->
 
   <div class="book" id="book">
 
@@ -1398,17 +1124,13 @@ ol.idx li b{
 
       <!-- =================================================
            SPREAD 0
-      ================================================== -->
+           ================================================= -->
 
-      <div
-        class="spread active"
-        data-spread="0">
+      <div class="spread active" data-spread="0">
 
         <div class="page left">
 
-          <div
-            class="card"
-            style="margin-top:70px;">
+          <div class="card" style="margin-top:70px;">
 
             <div class="eyebrow">
               Propiedad de
@@ -1439,66 +1161,59 @@ ol.idx li b{
           </h2>
 
           <p class="desc">
-            Hola mi amor, se lo mucho que te encantan
-            los libros y en este 8avo mesario queria
-            hacerte algo especial relacionado a los libros,
-            este es un libro muy bello sobre nosotros.
+            Hola mi amor, se lo mucho que te encantan los libros
+            y en este 8avo mesario queria hacerte algo especial
+            relacionado a los libros, este es un libro muy bello
+            sobre nosotros.
           </p>
 
           <ol class="idx">
 
             <li>
               <span>
-                <b>I.</b>
-                Cartita especial
+                <b>I.</b> Cartita especial
               </span>
               <span>1</span>
             </li>
 
             <li>
               <span>
-                <b>II.</b>
-                Collage
+                <b>II.</b> Collage
               </span>
               <span>2</span>
             </li>
 
             <li>
               <span>
-                <b>III.</b>
-                Capsula del tiempo
+                <b>III.</b> Capsula del tiempo
               </span>
               <span>3</span>
             </li>
 
             <li>
               <span>
-                <b>IV.</b>
-                Galeria de recuerdos
+                <b>IV.</b> Galeria de recuerdos
               </span>
               <span>4</span>
             </li>
 
             <li>
               <span>
-                <b>V.</b>
-                Medidor de Amor
+                <b>V.</b> Medidor de Amor
               </span>
               <span>5</span>
             </li>
 
             <li>
               <span>
-                <b>VI.</b>
-                Sorteo Romantico
+                <b>VI.</b> Sorteo Romantico
               </span>
               <span>6</span>
             </li>
 
             <li>
               <span>
-                <b>VII.</b>
-                Algo que me recuerda a ti
+                <b>VII.</b> Algo que me recuerda a ti
               </span>
               <span>7</span>
             </li>
@@ -1512,26 +1227,21 @@ ol.idx li b{
 
       <!-- =================================================
            SPREAD 1
-      ================================================== -->
+           ================================================= -->
 
-      <div
-        class="spread"
-        data-spread="1">
+      <div class="spread" data-spread="1">
 
         <div class="page left">
 
           <div
             class="chap"
-            style="text-align:center;">
-
+            style="text-align:center;"
+          >
             Antes de empezar
-
           </div>
 
           <h2 style="text-align:center;">
-
             Una Carta para Ti
-
           </h2>
 
           <div
@@ -1543,15 +1253,13 @@ ol.idx li b{
               width:100%;
               min-height:260px;
             "
-            contenteditable="true">
-
-Hola mi amoooor, estamos en nuestro octavo mesario. Te agradezco mucho mi amor por estos bellos 8 meses a tu lado han sido muy pero muy especiales a tu lado, como te he dicho me siento muy pero muy afortunado de tenerte en mi vida que formes parte de mi corazon y si se podria decir que de todo mi corazon, gracias en verdad mi amor por ser el motivo de todas mis sonrisas, de ser mi paz dia a dia y sobre todo ser mi compañia en este camino que se llama vida, quien diria que luego de dos años estariamos aqui mi amor, empezamos como dos extraños y paramos siendo una bonita pareja creeme que yo me siento muy orgulloso de lo nuestro de como ha ido progresando y como seguira perdurando el amor por el resto de nuestras vidas y almas pq si mi amor sos mi alma gemela mi lazito rojo como te lo he dicho muchas veces y creeme que me siento tan pero tan feliz que saeas tu y no otra persona, porque lo que soy contigo no seria con nadie mas mi amor, el hombre que me converti a tu lado es la mejor version de mi y de verdad la mereces y mucho mas aun, gracias por estos bellos 8 meses mi amor, no sabes lo feliz que han sido pese a lo que he pasado siemrpe buscas sacarme una sonrisa y sobre todo alaegrarme mi corazon y de verdad te lo agradezco, gracias por verme siempre con ojos de amor en estos 8 meses amor.
-
-Felices 8 meses mi preciosa
-
-Te amo mi Reina 👸🤍
-
-          </div>
+            contenteditable="true"
+          >Hola mi amoooor, estamos en nuestro octavo mesario. Te agradezco mucho mi amor por estos bellos 8 meses a tu lado han sido muy pero 
+muy especiales a tu lado, como te he dicho me siento muy pero muy afortunado de tenerte en mi vida que formes parte de mi corazon y si se podria decir que de todo mi corazon, gracias en verdad mi amor por ser el motivo de todas mis sonrisas, de ser mi paz dia a dia y sobre todo ser mi compañia en este camino que se llama vida, quien diria que luego de 
+dos años estariamos aqui mi amor, empezamos como dos extraños y paramos siendo una bonita pareja creeme que yo me siento muy orgulloso de lo nuestro de como ha ido progresando y como seguira perdurando el amor por el resto de nuestras vidas y almas pq si mi amor sos mi alma gemela mi lazito rojo como te lo he dicho muchas veces y creeme que me siento tan pero tan feliz que saeas tu y no otra
+persona, porque lo que soy contigo no seria con nadie mas mi amor, el hombre que me converti a tu lado es la mejor version de mi y de verdad la mereces y mucho mas aun, gracias por estos bellos 8 meses mi amor, no sabes lo feliz que han sido pese a lo que he pasado siemrpe buscas sacarme una sonrisa y sobre todo alaegrarme mi corazon y de verdad te lo agradezco, gracias por verme siempre con ojos de amor en estos 8 meses amor.
+Felices 8 meses mi preciosa 
+Te amo mi Reina 👸🤍</div>
 
         </div>
 
@@ -1560,46 +1268,41 @@ Te amo mi Reina 👸🤍
 
           <div
             class="chap"
-            style="text-align:center;">
-
+            style="text-align:center;"
+          >
             Nuestros Momentos
-
           </div>
 
           <h2 style="text-align:center;">
-
             Collage de nuestros bellos momentos
-
           </h2>
 
-          <div
-            class="collage"
-            id="collage">
+          <div class="collage" id="collage">
 
             <div
               class="collage-slot"
-              style="background-image:url('foto1.jpeg')">
-            </div>
+              style="background-image:url('foto1.jpeg')"
+            ></div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto2.jpeg')">
-            </div>
+              style="background-image:url('foto2.jpeg')"
+            ></div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto3.jpeg')">
-            </div>
+              style="background-image:url('foto3.jpeg')"
+            ></div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto4.jpeg')">
-            </div>
+              style="background-image:url('foto4.jpeg')"
+            ></div>
 
             <div
               class="collage-slot"
-              style="background-image:url('foto5.jpeg')">
-            </div>
+              style="background-image:url('foto5.jpeg')"
+            ></div>
 
           </div>
 
@@ -1610,11 +1313,9 @@ Te amo mi Reina 👸🤍
 
       <!-- =================================================
            SPREAD 2
-      ================================================== -->
+           ================================================= -->
 
-      <div
-        class="spread"
-        data-spread="2">
+      <div class="spread" data-spread="2">
 
         <div class="page left">
 
@@ -1637,7 +1338,8 @@ Te amo mi Reina 👸🤍
               <input
                 type="text"
                 id="capsulaDe"
-                value="Mi Amor">
+                value="Mi Amor"
+              >
 
             </div>
 
@@ -1651,7 +1353,8 @@ Te amo mi Reina 👸🤍
               <input
                 type="date"
                 id="capsulaFecha"
-                value="2026-08-20">
+                value="2026-08-20"
+              >
 
             </div>
 
@@ -1667,19 +1370,9 @@ Te amo mi Reina 👸🤍
               </label>
 
               <select id="capsulaNivel">
-
-                <option>
-                  Al infinito
-                </option>
-
-                <option>
-                  Muchísimo
-                </option>
-
-                <option>
-                  Todos los días más
-                </option>
-
+                <option>Al infinito</option>
+                <option>Muchísimo</option>
+                <option>Todos los días más</option>
               </select>
 
             </div>
@@ -1692,19 +1385,9 @@ Te amo mi Reina 👸🤍
               </label>
 
               <select id="capsulaBeso">
-
-                <option>
-                  Tiernos
-                </option>
-
-                <option>
-                  Apasionados
-                </option>
-
-                <option>
-                  De buenos días
-                </option>
-
+                <option>Tiernos</option>
+                <option>Apasionados</option>
+                <option>De buenos días</option>
               </select>
 
             </div>
@@ -1724,8 +1407,8 @@ Te amo mi Reina 👸🤍
                 <input
                   type="radio"
                   name="extranas"
-                  value="Un poquito">
-
+                  value="Un poquito"
+                >
                 Un poquito
               </label>
 
@@ -1733,8 +1416,8 @@ Te amo mi Reina 👸🤍
                 <input
                   type="radio"
                   name="extranas"
-                  value="Mucho">
-
+                  value="Mucho"
+                >
                 Mucho
               </label>
 
@@ -1743,8 +1426,8 @@ Te amo mi Reina 👸🤍
                   type="radio"
                   name="extranas"
                   value="Demasiado"
-                  checked>
-
+                  checked
+                >
                 Demasiado
               </label>
 
@@ -1773,7 +1456,8 @@ Te amo mi Reina 👸🤍
                 color:var(--wine);
                 resize:vertical;
               "
-              placeholder="Escribe aquí lo que quieras decirme..."></textarea>
+              placeholder="Escribe aquí lo que quieras decirme..."
+            ></textarea>
 
           </div>
 
@@ -1781,10 +1465,9 @@ Te amo mi Reina 👸🤍
           <button
             class="save-btn"
             id="capsulaBtn"
-            onclick="enviarCapsula()">
-
+            onclick="enviarCapsula()"
+          >
             Guardar Recuerdo
-
           </button>
 
         </div>
@@ -1797,14 +1480,14 @@ Te amo mi Reina 👸🤍
           </h2>
 
           <p class="desc">
-            Toca cada foto para darle la vuelta
-            y descubrir lo que esconde.
+            Toca cada foto para darle la vuelta y descubrir
+            lo que esconde.
           </p>
 
           <div
             class="gallery"
-            id="gallery">
-          </div>
+            id="gallery"
+          ></div>
 
         </div>
 
@@ -1813,11 +1496,9 @@ Te amo mi Reina 👸🤍
 
       <!-- =================================================
            SPREAD 3
-      ================================================== -->
+           ================================================= -->
 
-      <div
-        class="spread"
-        data-spread="3">
+      <div class="spread" data-spread="3">
 
         <div class="page left">
 
@@ -1826,8 +1507,8 @@ Te amo mi Reina 👸🤍
           </h2>
 
           <p class="desc">
-            Toca mi corazón repetidamente
-            para llenarlo de tu amor.
+            Toca mi corazón repetidamente para llenarlo
+            de tu amor.
           </p>
 
           <div class="center">
@@ -1835,13 +1516,13 @@ Te amo mi Reina 👸🤍
             <button
               class="heart-tap"
               id="loveHeart"
-              onclick="tapHeart()">
-
+              onclick="tapHeart()"
+            >
               ♥
             </button>
 
             <div class="tapline">
-              ¡Sigue tocando!
+              ¡Sigue tocando! 💕
             </div>
 
           </div>
@@ -1855,17 +1536,16 @@ Te amo mi Reina 👸🤍
 
             <div
               class="meterfill"
-              id="meterFill">
-            </div>
+              id="meterFill"
+            ></div>
 
           </div>
 
           <div
             class="meterpct"
-            id="meterPct">
-
+            id="meterPct"
+          >
             0%
-
           </div>
 
         </div>
@@ -1874,34 +1554,27 @@ Te amo mi Reina 👸🤍
         <div class="page right">
 
           <p class="desc">
-
-            ¿No sabes qué hacer hoy?
-            toca la caja de recuerdos para
-            generar un ticket jijiji
-
+            ¿No sabes qué hacer hoy? toca la caja de recuerdos
+            para generar un ticket jijiji
           </p>
-
 
           <div
             class="sorteo-box"
             id="sorteoBox"
-            onclick="generarVale()">
+            onclick="generarVale()"
+          >
 
             <span id="sorteoResult">
-
               (Toca aqui para ver tu premio)
-
             </span>
 
           </div>
 
-
           <button
             class="genbtn"
-            onclick="generarVale()">
-
-            GENERAR VALE
-
+            onclick="generarVale()"
+          >
+            GENERAR VALE 🎫
           </button>
 
         </div>
@@ -1911,11 +1584,9 @@ Te amo mi Reina 👸🤍
 
       <!-- =================================================
            SPREAD 4
-      ================================================== -->
+           ================================================= -->
 
-      <div
-        class="spread"
-        data-spread="4">
+      <div class="spread" data-spread="4">
 
         <div
           class="page left"
@@ -1925,12 +1596,11 @@ Te amo mi Reina 👸🤍
             align-items:center;
             justify-content:center;
             text-align:center;
-          ">
+          "
+        >
 
           <h2 style="margin-bottom:10px;">
-
             Algo que me recuerda a ti
-
           </h2>
 
           <p
@@ -1938,25 +1608,24 @@ Te amo mi Reina 👸🤍
             style="
               max-width:280px;
               margin:0 auto 12px;
-            ">
-
-            Desde que te conozco ahora que veo
-            un girasol me recuerda tanto a ti,
-            se que es tu flor favorita y creeme
-            cada que los veo en la calle o en una
-            foto incluso en una publicacion me
-            hace pensar en ti, asi que por eso
-            aqui tienes uno hecho por mi,
+            "
+          >
+            Desde que te conozco ahora que veo un girasol
+            me recuerda tanto a ti, se que es tu flor favorita
+            y creeme cada que los veo en la calle o en una foto
+            incluso en una publicacion me hace pensar en ti,
+            asi que por eso aqui tienes uno hecho por mi,
             Te amo mi amor.
-
           </p>
 
+
+          <!-- GIRASOL -->
 
           <svg
             viewBox="0 0 200 260"
             width="190"
             height="247"
-            style="max-width:80%;height:auto;">
+          >
 
             <defs>
 
@@ -1965,19 +1634,23 @@ Te amo mi Reina 👸🤍
                 x1="0"
                 y1="0"
                 x2="0"
-                y2="1">
+                y2="1"
+              >
 
                 <stop
                   offset="0%"
-                  stop-color="#f7c948"/>
+                  stop-color="#f7c948"
+                />
 
                 <stop
                   offset="60%"
-                  stop-color="#eda52e"/>
+                  stop-color="#eda52e"
+                />
 
                 <stop
                   offset="100%"
-                  stop-color="#d3841c"/>
+                  stop-color="#d3841c"
+                />
 
               </linearGradient>
 
@@ -1987,15 +1660,18 @@ Te amo mi Reina 👸🤍
                 x1="0"
                 y1="0"
                 x2="1"
-                y2="0">
+                y2="0"
+              >
 
                 <stop
                   offset="0%"
-                  stop-color="#4c7a2e"/>
+                  stop-color="#4c7a2e"
+                />
 
                 <stop
                   offset="100%"
-                  stop-color="#6ea344"/>
+                  stop-color="#6ea344"
+                />
 
               </linearGradient>
 
@@ -2005,15 +1681,18 @@ Te amo mi Reina 👸🤍
                 x1="0"
                 y1="0"
                 x2="1"
-                y2="1">
+                y2="1"
+              >
 
                 <stop
                   offset="0%"
-                  stop-color="#6ea344"/>
+                  stop-color="#6ea344"
+                />
 
                 <stop
                   offset="100%"
-                  stop-color="#3f6423"/>
+                  stop-color="#3f6423"
+                />
 
               </linearGradient>
 
@@ -2022,19 +1701,23 @@ Te amo mi Reina 👸🤍
                 id="centerGrad"
                 cx="35%"
                 cy="30%"
-                r="75%">
+                r="75%"
+              >
 
                 <stop
                   offset="0%"
-                  stop-color="#8a5a2c"/>
+                  stop-color="#8a5a2c"
+                />
 
                 <stop
                   offset="55%"
-                  stop-color="#6b431f"/>
+                  stop-color="#6b431f"
+                />
 
                 <stop
                   offset="100%"
-                  stop-color="#4a2c12"/>
+                  stop-color="#4a2c12"
+                />
 
               </radialGradient>
 
@@ -2044,57 +1727,68 @@ Te amo mi Reina 👸🤍
                 x="-40%"
                 y="-40%"
                 width="180%"
-                height="180%">
+                height="180%"
+              >
 
                 <feDropShadow
                   dx="0"
                   dy="4"
                   stdDeviation="4"
                   flood-color="#3d0a1c"
-                  flood-opacity="0.35"/>
+                  flood-opacity="0.35"
+                />
 
               </filter>
 
             </defs>
 
 
+            <!-- Tallo -->
+
             <path
               d="M100 148 C 96 175, 96 205, 100 248"
               stroke="url(#stemGrad)"
               stroke-width="6"
               fill="none"
-              stroke-linecap="round"/>
+              stroke-linecap="round"
+            />
 
+
+            <!-- Hojas -->
 
             <path
               d="M99 188 C 74 186, 56 198, 46 218 C 70 220, 90 210, 99 192 Z"
-              fill="url(#leafGrad)"/>
-
+              fill="url(#leafGrad)"
+            />
 
             <path
               d="M99 190 C 84 195, 68 204, 50 214"
               stroke="#2f4f19"
               stroke-width="1.4"
               fill="none"
-              opacity=".6"/>
-
+              opacity=".6"
+            />
 
             <path
               d="M101 210 C 126 210, 144 222, 152 240 C 128 240, 108 230, 100 214 Z"
-              fill="url(#leafGrad)"/>
-
+              fill="url(#leafGrad)"
+            />
 
             <path
               d="M101 213 C 116 219, 132 227, 148 237"
               stroke="#2f4f19"
               stroke-width="1.4"
               fill="none"
-              opacity=".6"/>
+              opacity=".6"
+            />
 
+
+            <!-- Flor -->
 
             <g
               transform="translate(100,95)"
-              filter="url(#softShadow)">
+              filter="url(#softShadow)"
+            >
 
               <g id="petal">
 
@@ -2103,7 +1797,8 @@ Te amo mi Reina 👸🤍
                   cy="-56"
                   rx="14"
                   ry="32"
-                  fill="url(#petalGrad)"/>
+                  fill="url(#petalGrad)"
+                />
 
                 <ellipse
                   cx="0"
@@ -2111,7 +1806,8 @@ Te amo mi Reina 👸🤍
                   rx="5"
                   ry="26"
                   fill="#f7c948"
-                  opacity=".45"/>
+                  opacity=".45"
+                />
 
               </g>
 
@@ -2136,7 +1832,63 @@ Te amo mi Reina 👸🤍
                 cx="0"
                 cy="0"
                 r="36"
-                fill="url(#centerGrad)"/>
+                fill="url(#centerGrad)"
+              />
+
+
+              <g
+                fill="#2e1b0b"
+                opacity=".55"
+              >
+
+                <circle cx="0" cy="0" r="2"/>
+
+                <circle cx="5" cy="-4" r="1.7"/>
+                <circle cx="-6" cy="-3" r="1.7"/>
+                <circle cx="1" cy="7" r="1.7"/>
+
+                <circle cx="10" cy="4" r="1.7"/>
+                <circle cx="-10" cy="5" r="1.7"/>
+                <circle cx="-2" cy="-10" r="1.7"/>
+
+                <circle cx="15" cy="-6" r="1.6"/>
+                <circle cx="-15" cy="-4" r="1.6"/>
+                <circle cx="6" cy="14" r="1.6"/>
+
+                <circle cx="-8" cy="13" r="1.6"/>
+                <circle cx="14" cy="10" r="1.6"/>
+                <circle cx="-14" cy="9" r="1.6"/>
+
+                <circle cx="0" cy="-18" r="1.6"/>
+                <circle cx="20" cy="1" r="1.5"/>
+                <circle cx="-20" cy="0" r="1.5"/>
+
+                <circle cx="10" cy="-15" r="1.5"/>
+                <circle cx="-11" cy="-14" r="1.5"/>
+                <circle cx="17" cy="14" r="1.5"/>
+
+                <circle cx="-17" cy="13" r="1.5"/>
+                <circle cx="2" cy="22" r="1.5"/>
+                <circle cx="-4" cy="21" r="1.5"/>
+
+                <circle cx="25" cy="-8" r="1.3"/>
+                <circle cx="-25" cy="-7" r="1.3"/>
+                <circle cx="22" cy="18" r="1.3"/>
+                <circle cx="-23" cy="17" r="1.3"/>
+                <circle cx="-1" cy="-26" r="1.3"/>
+                <circle cx="8" cy="27" r="1.3"/>
+
+              </g>
+
+
+              <ellipse
+                cx="-10"
+                cy="-12"
+                rx="14"
+                ry="9"
+                fill="#c98a3f"
+                opacity=".18"
+              />
 
             </g>
 
@@ -2147,25 +1899,22 @@ Te amo mi Reina 👸🤍
 
         <div
           class="page right"
-          style="text-align:center;">
+          style="text-align:center;"
+        >
 
           <div
             style="
               color:var(--heart);
               font-size:20px;
               margin-bottom:10px;
-            ">
-
+            "
+          >
             ♥
           </div>
 
-
           <h2 style="text-align:center;">
-
             Te amo, Mi Amor
-
           </h2>
-
 
           <p
             class="desc"
@@ -2173,8 +1922,8 @@ Te amo mi Reina 👸🤍
               text-align:center;
               max-width:340px;
               margin:0 auto 22px;
-            ">
-
+            "
+          >
             Gracias por estos bellos 8 meses mi amor,
             han sido los mejores del mundo desde diciembre
             del 25 hasta hoy 20/08/2026 cada vez mas cerca
@@ -2183,17 +1932,14 @@ Te amo mi Reina 👸🤍
             resto de mi vida y si te lo he dicho demasiadas
             veces, pero es la verdad mi amor tu eres la mujer
             de mis sueños, gracias por amarme mucho,
-            Te amo con todo mi ser mi amor.
-
+            Te amo con todo mi ser mi amor
           </p>
-
 
           <button
             class="save-btn"
-            onclick="closeBook()">
-
+            onclick="closeBook()"
+          >
             Cerrar nuestro libro
-
           </button>
 
         </div>
@@ -2203,26 +1949,25 @@ Te amo mi Reina 👸🤍
     </div>
 
 
-    <!-- NAVEGACION -->
+    <!-- ===================================================
+         NAVEGACIÓN
+         =================================================== -->
 
     <div class="nav">
 
       <button
         id="btnPrev"
-        onclick="go(-1)">
-
+        onclick="go(-1)"
+      >
         ‹ Anterior
-
       </button>
-
 
       <button
         id="btnNext"
         class="primary"
-        onclick="go(1)">
-
+        onclick="go(1)"
+      >
         Siguiente ›
-
       </button>
 
     </div>
@@ -2234,466 +1979,445 @@ Te amo mi Reina 👸🤍
 
 <script>
 
-/* =========================================================
-   FOTOS
-========================================================= */
+  /* =====================================================
+     FOTOS DE GALERÍA
+     ===================================================== */
 
-const fotos = [
+  const fotos = [
 
-  {
-    cap:"Nuestro Inicio",
-    icon:"💗",
-    img:"inicio.jpeg",
-    back:"Esta foto es muy especial ya que fue cuando te comence a conocer y era donde me hacias caras por un abrazo, o cuando me comenzaste a llamar mono, nuestro inicio es un momento muy especial en mi vida.",
-    c1:"#f6c6d1",
-    c2:"#f19bb0"
-  },
+    {
+      cap:"Nuestro Inicio",
+      icon:"💗",
+      img:"inicio.jpeg",
+      back:"Esta foto es muy especial ya que fue cuando te comence a conocer y era donde me hacias caras por un abrazo, o cuando me comenzaste a llamar mono, nuestro inicio es un momento muy especial en mi vida.",
+      c1:"#f6c6d1",
+      c2:"#f19bb0"
+    },
 
-  {
-    cap:"Risas Juntos",
-    icon:"😄",
-    img:"risas.jpeg",
-    back:"Esta es una de millones de fotos que tenemos con risas juntos, pero en especial me gusta esta porque vivimos una cita muy bonita comiendo pizza, reindonos de como se nos caia el queso y sobre todo con un bello paisaje de fondo.",
-    c1:"#f4b8c9",
-    c2:"#e88aa2"
-  },
+    {
+      cap:"Risas Juntos",
+      icon:"😄",
+      img:"risas.jpeg",
+      back:"Esta es una de millones de fotos que tenemos con risas juntos, pero en especial me gusta esta porque vivimos una cita muy bonita comiendo pizza, reindonos de como se nos caia el queso y sobre todo con un bello paisaje de fondo.",
+      c1:"#f4b8c9",
+      c2:"#e88aa2"
+    },
 
-  {
-    cap:"Aventuras",
-    icon:"🌿",
-    img:"aventuras.jpeg",
-    back:"Esta aventura en especial me encanto que fuimos por primera vez al zoo juntos y fuimos a visistar a tus ante pasados JAJAJAJA, es broma, me encanta esta foto en especifico que pasamos un excelente dia en el zoo compartiendo y conviviendo juntos viendo animales riendonos mucho y sobre todo amandonos incondicionalmente.",
-    c1:"#f0a7ba",
-    c2:"#dc7f97"
-  },
+    {
+      cap:"Aventuras",
+      icon:"🌿",
+      img:"aventuras.jpeg",
+      back:"Esta aventura en especial me encanto que fuimos por primera vez al zoo juntos y fuimos a visistar a tus ante pasados JAJAJAJA, es broma, me encanta esta foto en especifico que pasamos un excelente dia en el zoo compartiendo y conviviendo juntos viendo animales riendonos mucho y sobre todo amandonos incondicionalmente.",
+      c1:"#f0a7ba",
+      c2:"#dc7f97"
+    },
 
-  {
-    cap:"Hoy",
-    icon:"🐾",
-    img:"hoy.jpeg",
-    back:"El ahora luego de pasar muchos momentos bonitos al igual que altas y bajas seguimos con nuestro amor y muy fuerte me siento muy pero muy feliz de como a evolucionado la relacion y sobre todo que sigas a mi lado en verdad lo aprecio con todo mi corazon y creeme que eres la mejor novia del mundo muy orgulloso y feliz de que estes en mi vida, alma, mente y corazon.",
-    c1:"#f6cfd8",
-    c2:"#f0a3b6"
-  }
+    {
+      cap:"Hoy",
+      icon:"🐾",
+      img:"hoy.jpeg",
+      back:"El ahora luego de pasar muchos momentos bonitos al igual que altas y bajas seguimos con nuestro amor y muy fuerte me siento muy pero muy feliz de como a evolucionado la relacion y sobre todo que sigas a mi lado en verdad lo aprecio con todo mi corazon y creeme que eres la mejor novia del mundo muy orgulloso y feliz de que estes en mi vida, alma, mente y corazon.",
+      c1:"#f6cfd8",
+      c2:"#f0a3b6"
+    }
 
-];
-
-
-/* =========================================================
-   VALES
-========================================================= */
-
-const valesSorteo = [
-
-  "Una cena en un restaurante a tu eleccion",
-
-  "Un dia de pelis, todas elegidas por ti",
-
-  "Si a todo por un dia completo",
-
-  "Vale por 100 sushis JIJIJI",
-
-  "Tu eliges que hacer por todo un dia en una salida",
-
-  "Valido por cualquier comida y con el numero de las veces que quieras"
-
-];
+  ];
 
 
-/* =========================================================
-   GALERIA
-========================================================= */
+  /* =====================================================
+     VALES
+     ===================================================== */
 
-const gallery =
-  document.getElementById('gallery');
+  const valesSorteo = [
+
+    "Una cena en un restaurante a tu eleccion",
+
+    "Un dia de pelis, todas elegidas por ti",
+
+    "Si a todo por un dia completo",
+
+    "Vale por 100 sushis JIJIJI",
+
+    "Tu eliges que hacer por todo un dia en una salida",
+
+    "Valido por cualquier comida y con el numero de las veces que quieras"
+
+  ];
 
 
-fotos.forEach((f,i)=>{
+  /* =====================================================
+     CREAR GALERÍA
+     ===================================================== */
 
-  const card =
-    document.createElement('div');
+  const gallery =
+    document.getElementById('gallery');
 
-  card.className =
-    'flipcard';
+  fotos.forEach((f,i)=>{
 
-  card.onclick =
-    ()=>{
-      card.classList.toggle('flipped');
-    };
+    const card =
+      document.createElement('div');
 
+    card.className =
+      'flipcard';
 
-  card.innerHTML = `
+    card.onclick =
+      ()=>card.classList.toggle('flipped');
 
-    <div class="flipcard-inner">
+    card.innerHTML = `
 
-      <div
-        class="flipface flip-front"
-        style="
-          --f1:${f.c1};
-          --f2:${f.c2};
-        ">
+      <div class="flipcard-inner">
 
         <div
-          class="ic"
-          style="
-            ${f.img
-              ? `background-image:url('${f.img}')`
-              : ''}
-          ">
+          class="flipface flip-front"
+          style="--f1:${f.c1};--f2:${f.c2}"
+        >
 
-          ${f.img ? '' : f.icon}
+          <div
+            class="ic"
+            style="
+              ${f.img
+                ? `background-image:url('${f.img}')`
+                : ''
+              }
+            "
+          >
+            ${f.img ? '' : f.icon}
+          </div>
+
+          <div class="cap">
+            ${f.cap}
+          </div>
 
         </div>
 
-        <div class="cap">
 
-          ${f.cap}
-
+        <div class="flipface flip-back">
+          ${f.back}
         </div>
 
       </div>
 
+    `;
 
-      <div class="flipface flip-back">
+    gallery.appendChild(card);
 
-        ${f.back}
-
-      </div>
-
-    </div>
-
-  `;
+  });
 
 
-  gallery.appendChild(card);
+  /* =====================================================
+     FORMSPREE
+     ===================================================== */
 
-});
-
-
-/* =========================================================
-   FORMSPREE
-========================================================= */
-
-const FORMSPREE_URL =
-  "https://formspree.io/f/xvkplzaj";
+  const FORMSPREE_URL =
+    "https://formspree.io/f/xvkplzaj";
 
 
-async function enviarCapsula(){
+  async function enviarCapsula(){
 
-  const btn =
-    document.getElementById('capsulaBtn');
+    const btn =
+      document.getElementById('capsulaBtn');
 
-  const de =
-    document.getElementById('capsulaDe').value
-    || "Mi Amor";
+    const de =
+      document.getElementById('capsulaDe').value
+      || "Mi Amor";
 
-  const fecha =
-    document.getElementById('capsulaFecha').value
-    || "";
+    const fecha =
+      document.getElementById('capsulaFecha').value
+      || "";
 
-  const nivel =
-    document.getElementById('capsulaNivel').value;
+    const nivel =
+      document.getElementById('capsulaNivel').value;
 
-  const beso =
-    document.getElementById('capsulaBeso').value;
+    const beso =
+      document.getElementById('capsulaBeso').value;
 
-  const extranas =
-    document.querySelector(
-      'input[name="extranas"]:checked'
-    ).value;
+    const extranas =
+      document.querySelector(
+        'input[name="extranas"]:checked'
+      ).value;
 
-  const mensaje =
-    document
-      .getElementById('capsulaMensaje')
-      .value
-      .trim();
-
-
-  if(btn){
-
-    btn.disabled = true;
-
-    btn.textContent =
-      'Enviando...';
-
-  }
+    const mensaje =
+      document
+        .getElementById('capsulaMensaje')
+        .value
+        .trim();
 
 
-  try{
+    if(btn){
 
-    const respuesta =
-      await fetch(
-        FORMSPREE_URL,
-        {
-          method:'POST',
+      btn.disabled = true;
 
-          headers:{
-            'Content-Type':
-              'application/json',
+      btn.textContent =
+        'Enviando...';
 
-            'Accept':
-              'application/json'
-          },
+    }
 
-          body:
-            JSON.stringify({
+
+    try{
+
+      const respuesta =
+        await fetch(
+          FORMSPREE_URL,
+          {
+            method:'POST',
+
+            headers:{
+              'Content-Type':'application/json',
+              'Accept':'application/json'
+            },
+
+            body:JSON.stringify({
 
               De:de,
 
-              'Fecha especial':
-                fecha,
+              'Fecha especial':fecha,
 
-              'Nivel del amor':
-                nivel,
+              'Nivel del amor':nivel,
 
-              'Tipo de beso favorito':
-                beso,
+              'Tipo de beso favorito':beso,
 
-              'Cuánto me extraña':
-                extranas,
+              'Cuánto me extraña':extranas,
 
-              Mensajito:
-                mensaje,
+              Mensajito:mensaje,
 
               _subject:
                 `Cápsula del Tiempo de ${de}`
 
             })
+          }
+        );
 
-        }
-      );
+
+      if(!respuesta.ok){
+
+        throw new Error(
+          'Error al enviar'
+        );
+
+      }
 
 
-    if(!respuesta.ok){
+      if(btn){
 
-      throw new Error(
-        'Error al enviar'
-      );
+        btn.textContent =
+          '¡Enviado! 💌';
+
+      }
+
+    }catch(error){
+
+      console.error(error);
+
+      if(btn){
+
+        btn.textContent =
+          'Error al enviar';
+
+      }
 
     }
 
 
-    if(btn){
+    setTimeout(()=>{
 
-      btn.textContent =
-        '¡Enviado! 💌';
+      if(btn){
 
-    }
+        btn.disabled = false;
 
-  }catch(error){
+        btn.textContent =
+          'Guardar Recuerdo';
 
-    console.error(error);
+      }
 
-    if(btn){
-
-      btn.textContent =
-        'Error al enviar';
-
-    }
+    },2500);
 
   }
 
 
-  setTimeout(()=>{
+  /* =====================================================
+     ABRIR / CERRAR LIBRO
+     ===================================================== */
 
-    if(btn){
+  function openBook(){
 
-      btn.disabled = false;
+    document
+      .getElementById('coverWrap')
+      .style.display='none';
 
-      btn.textContent =
-        'Guardar Recuerdo';
+    document
+      .getElementById('book')
+      .classList.add('active');
 
-    }
+    spread=0;
 
-  },2500);
+    render();
 
-}
-
-
-/* =========================================================
-   ABRIR / CERRAR
-========================================================= */
-
-function openBook(){
-
-  document
-    .getElementById('coverWrap')
-    .style.display='none';
-
-  document
-    .getElementById('book')
-    .classList.add('active');
-
-  spread=0;
-
-  render();
-
-}
+  }
 
 
-function closeBook(){
+  function closeBook(){
 
-  document
-    .getElementById('book')
-    .classList.remove('active');
+    document
+      .getElementById('book')
+      .classList.remove('active');
 
-  document
-    .getElementById('coverWrap')
-    .style.display='flex';
+    document
+      .getElementById('coverWrap')
+      .style.display='flex';
 
-}
-
-
-/* =========================================================
-   PAGINACION
-========================================================= */
-
-let spread=0;
-
-const spreads =
-  document.querySelectorAll('.spread');
+  }
 
 
-function render(){
+  /* =====================================================
+     NAVEGACIÓN
+     ===================================================== */
 
-  spreads.forEach(s=>{
+  let spread=0;
 
-    s.classList.toggle(
-      'active',
-      +s.dataset.spread === spread
-    );
-
-  });
+  const spreads =
+    document.querySelectorAll('.spread');
 
 
-  document
-    .getElementById('btnPrev')
-    .disabled =
+  function render(){
+
+    spreads.forEach(s=>{
+
+      s.classList.toggle(
+        'active',
+        +s.dataset.spread === spread
+      );
+
+    });
+
+
+    document
+      .getElementById('btnPrev')
+      .disabled =
       spread===0;
 
 
-  document
-    .getElementById('btnNext')
-    .disabled =
+    document
+      .getElementById('btnNext')
+      .disabled =
       spread===spreads.length-1;
 
-}
-
-
-function go(dir){
-
-  const target =
-    spread + dir;
-
-
-  if(
-    target < 0 ||
-    target > spreads.length-1
-  ){
-
-    return;
-
   }
 
 
-  spread =
-    target;
+  function go(dir){
 
-  render();
-
-}
-
-
-/* =========================================================
-   MEDIDOR DE AMOR
-========================================================= */
-
-let love=0;
-
-
-function tapHeart(){
-
-  love =
-    Math.min(
-      100,
-      love+10
-    );
-
-
-  document
-    .getElementById('meterFill')
-    .style.width =
-      love+'%';
-
-
-  document
-    .getElementById('meterPct')
-    .textContent =
-      love+'%';
-
-
-  const h =
-    document.getElementById(
-      'loveHeart'
-    );
-
-
-  h.style.transform =
-    'scale(1.15)';
-
-
-  setTimeout(()=>{
-
-    h.style.transform =
-      'scale(1)';
-
-  },120);
-
-}
-
-
-/* =========================================================
-   SORTEO
-========================================================= */
-
-function generarVale(){
-
-  const w =
-    valesSorteo[
-      Math.floor(
-        Math.random() *
-        valesSorteo.length
-      )
-    ];
-
-
-  document
-    .getElementById('sorteoResult')
-    .textContent =
-      w;
-
-}
-
-
-/* =========================================================
-   TECLA V
-========================================================= */
-
-document.addEventListener(
-  'keydown',
-  (e)=>{
+    const target =
+      spread+dir;
 
     if(
-      e.key.toLowerCase()==='v' &&
-      spread===3
+      target<0 ||
+      target>spreads.length-1
     ){
-
-      generarVale();
-
+      return;
     }
 
+    spread=target;
+
+    render();
+
   }
-);
+
+
+  /* =====================================================
+     MEDIDOR DE AMOR
+     ===================================================== */
+
+  let love=0;
+
+
+  function tapHeart(){
+
+    love =
+      Math.min(
+        100,
+        love+10
+      );
+
+
+    document
+      .getElementById('meterFill')
+      .style.width =
+      love+'%';
+
+
+    document
+      .getElementById('meterPct')
+      .textContent =
+      love+'%';
+
+
+    const h =
+      document.getElementById('loveHeart');
+
+
+    h.style.transform =
+      'scale(1.15)';
+
+
+    setTimeout(()=>{
+
+      h.style.transform =
+        'scale(1)';
+
+    },120);
+
+  }
+
+
+  /* =====================================================
+     SORTEO
+     ===================================================== */
+
+  function generarVale(){
+
+    const w =
+      valesSorteo[
+        Math.floor(
+          Math.random() *
+          valesSorteo.length
+        )
+      ];
+
+
+    document
+      .getElementById('sorteoResult')
+      .textContent =
+      w;
+
+  }
+
+
+  /* =====================================================
+     TECLA V
+     ===================================================== */
+
+  document.addEventListener(
+    'keydown',
+    (e)=>{
+
+      if(
+        e.key.toLowerCase()==='v' &&
+        spread===3
+      ){
+
+        generarVale();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     INICIO
+     ===================================================== */
+
+  render();
 
 </script>
 
